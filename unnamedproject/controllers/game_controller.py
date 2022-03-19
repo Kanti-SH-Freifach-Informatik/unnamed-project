@@ -1,5 +1,9 @@
+from flask import render_template
+
 from unnamedproject import db
 from unnamedproject.models.Game import Game
+from unnamedproject.models.GamePlayer import GamePlayer
+from unnamedproject.models.Player import Player
 
 # GET /
 def index():
@@ -11,7 +15,15 @@ def show(game_id):
 
 # POST /
 def create():
-    pass
+    players = Player.query.limit(4).all()
+    game = Game(active_player= 0, top_card="")
+    for i, p in enumerate(players):
+        gp = GamePlayer(order=i, hand="")
+        gp.player = p
+        game.game_players.append(gp)
+    db.session.add(game)
+    db.session.commit()
+    return render_template("games/show.html", game=game)
 
 # POST /:user_id
 def update(game_id):
@@ -19,4 +31,7 @@ def update(game_id):
 
 # DELETE /:user_id
 def delete(game_id):
-    pass
+    game = Game.query.filter_by(id=game_id).first()
+    db.session.delete(game)
+    db.session.commit()
+    return "game deleted"
