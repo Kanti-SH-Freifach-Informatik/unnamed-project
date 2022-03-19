@@ -24,8 +24,9 @@ def upgrade():
     sa.Column('top_card', sa.String(length=10), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('players',
+    players = op.create_table('players',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('name', sa.String(length=100), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('game_player',
@@ -38,6 +39,19 @@ def upgrade():
     sa.PrimaryKeyConstraint('game_id', 'player_id')
     )
     # ### end Alembic commands ###
+
+    op.bulk_insert(players, [
+        {'name': 'Testspieler 1'},
+        {'name': 'Testspieler 2'},
+        {'name': 'Testspieler 3'},
+        {'name': 'Testspieler 4'},
+        {'name': 'Testspieler 5'},
+        {'name': 'Testspieler 6'},
+        {'name': 'Testspieler 7'},
+        {'name': 'Testspieler 8'},
+        {'name': 'Testspieler 9'},
+        {'name': 'Testspieler 10'}
+    ])
 
 
 def downgrade():
