@@ -1,0 +1,14 @@
+<head>
+    {% assets "scss_all" %}
+    <!-- this is how you include css -->
+    <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {%endassets%}
+    <title>{{ name }}</title>
+</head>
+<body>
+    <header>Unnamed Project</header>
+    <main>
+        {%block content%}{%endblock%}
+    </main>
+    <footer></footer>
+</body>

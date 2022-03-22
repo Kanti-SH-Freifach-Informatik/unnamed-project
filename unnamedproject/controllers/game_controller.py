@@ -27,7 +27,7 @@ def create():
         game.game_players.append(gp)
     db.session.add(game)
     db.session.commit()
-    return render_template("games/show.html", game=game)
+    return render_template("gameroom/gameroom.html", game=game)
 
 # POST /:user_id
 def update(game_id):
