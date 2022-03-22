@@ -5,7 +5,7 @@ from unnamedproject.models.Game import Game
 from unnamedproject.models.GamePlayer import GamePlayer
 from unnamedproject.models.Player import Player
 from unnamedproject.models.Card import Card
-from unnamedproject.utilities.card_utilities import generate_hand
+from unnamedproject.utilities.card_utilities import generate_hand_str
 
 # GET /
 def index():
@@ -22,7 +22,7 @@ def create():
     game = Game(active_player= 0, top_card=str(top_card))
     for i, p in enumerate(players):
         # TODO füge hier Karten zur Hand des Spielers hinzu
-        gp = GamePlayer(order=i, hand=generate_hand(7))
+        gp = GamePlayer(order=i, hand=generate_hand_str(7))
         gp.player = p
         game.game_players.append(gp)
     db.session.add(game)
