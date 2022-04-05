@@ -1,5 +1,5 @@
 from random import random
-from unnamedproject.models.Card import Card
+from unnamedproject.models.Card import Card, CardColor, CardValue
 
 def generate_hand(n_cards):
     cards = [] 
@@ -13,6 +13,18 @@ def generate_hand_str(n_cards):
 
 def parse_hand_str(hand):
     cards = hand.split(",")
-    cards = [Card(c) for c in cards]
+    cards = [Card(representation=c) for c in cards]
     return cards
+
+def is_playable(top_card, next_card):
+    a = next_card.color == top_card.color or next_card.value == top_card.value
+    return a
+
+
+
+
+
+
+    
+
 

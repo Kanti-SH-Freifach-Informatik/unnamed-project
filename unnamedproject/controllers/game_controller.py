@@ -11,7 +11,7 @@ from unnamedproject.utilities.card_utilities import generate_hand_str
 def index():
     return 'hello game'
 
-# GET /:user_id
+# GET /:game_id
 def show(game_id):
     return 'hello game number ' + str(game_id)
 
@@ -29,11 +29,12 @@ def create():
     db.session.commit()
     return render_template("games/show.html", game=game)
 
-# POST /:user_id
-def update(game_id):
-    pass
+# POST /:game_id/:played_card
+def update(game_id, played_card):
+    game = Game.query.filter_by(id=game_id).first()
+    card = Card(representation=played_card)
 
-# DELETE /:user_id
+# DELETE /:game_id
 def delete(game_id):
     game = Game.query.filter_by(id=game_id).first()
     db.session.delete(game)
