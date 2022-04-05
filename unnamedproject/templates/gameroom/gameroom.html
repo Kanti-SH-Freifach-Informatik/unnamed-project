@@ -5,14 +5,10 @@
 {%endblock%}
 
 {% block content %}
-  <div>
-     {{ game.active_player }}
-     {{ game.game_players[game.active_player].hand}}
-     {{ game.top_card}}
-
-     <div id="top_card_background_div" class="card">
+  <div id="center-flex-box">
+    <div id="top_card_background_div" class="card card-color-{{ game.get_top_card().color.value.lower()}}">
         <p id="top_card_number" class="card">{{game.get_top_card().value.value}}</p>
-     </div>
+    </div>
   </div>
 {% endblock %}
 

@@ -13,7 +13,8 @@ migrate = Migrate(app, db)
 # Assets
 assets = Environment(app)
 assets.url = app.static_url_path
-scss = Bundle('scss/main.scss', filters='pyscss', output='style.css')
+scss = Bundle('scss/gameroom.scss', filters='pyscss', output='style.css')
+
 assets.register('scss_all', scss)
 
 from unnamedproject.models import Game, GamePlayer, Player

@@ -2,4 +2,26 @@ body {
   background-color: #40c4ff;
   margin: 0px; }
   body header {
-    background-color: red; }
+    background-color: #40c4ff; }
+    body main .card-color-b {
+      background-color: blue; }
+      body main .card-color-g {
+        background-color: green; }
+        body main .card-color-y {
+          background-color: yellow; }
+          body main .card-color-r {
+            background-color: red; }
+            body main #top_card_background_div {
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 175px;
+              height: 300px;
+              font-size: 128px; }
+              body main #center-flex-box {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center; }
