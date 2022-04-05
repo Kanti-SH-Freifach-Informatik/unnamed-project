@@ -1,5 +1,21 @@
 {% extends 'base-layout.html' %}
 
+{%block header%}
+
+{%endblock%}
+
 {% block content %}
-  <div>hallo123</div>
+  <div>
+     {{ game.active_player }}
+     {{ game.game_players[game.active_player].hand}}
+     {{ game.top_card}}
+
+     <div id="top_card_background_div" class="card">
+        <p id="top_card_number" class="card">{{game.get_top_card().value.value}}</p>
+     </div>
+  </div>
+{% endblock %}
+
+{%block footer%}
+
 {% endblock %}
