@@ -6,9 +6,13 @@
     <title>{{ name }}</title>
 </head>
 <body>
-    <header>Unnamed Project</header>
+    <header>
+        {%block header%}{%endblock%}
+    </header>
     <main>
         {%block content%}{%endblock%}
     </main>
-    <footer></footer>
+    <footer>
+        {%block footer%}{%endblock%}
+    </footer>
 </body>
