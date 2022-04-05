@@ -2,8 +2,7 @@
 body {
   background-color: $base-color;
   margin: 0px;
-
   header {
-    background-color: red;
+    background-color: $base-color;
   }
 }

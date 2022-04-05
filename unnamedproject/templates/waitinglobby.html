@@ -2,9 +2,9 @@
 
 {%block content%}
 <form action="{{ url_for('games.create')}}" method="post">
-    <label for="player_name">Name</label>
-    <input type="text" id="pn" name="first_number" required autofocus>
-    <button type="submit">Abschicken</button> 
+    <label for="player_count">Anzahl Spieler</label>
+    <input type="text" id="pc" name="player_count" required autofocus>
+    <button type="submit">Spieler generieren</button> 
     <p2>{{  message  }}</p2>
 </form>
 
