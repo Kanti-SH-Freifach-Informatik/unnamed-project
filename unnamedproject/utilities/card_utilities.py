@@ -23,13 +23,3 @@ def parse_hand_str(hand):
 def is_playable(top_card, next_card):
     a = next_card.color == top_card.color or next_card.value == top_card.value
     return a
-
-
-
-
-
-
-
-    
-
-
