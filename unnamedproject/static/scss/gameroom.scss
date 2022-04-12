@@ -44,5 +44,21 @@ body {
       align-items: center;
     }
   }
+  
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    #card_selection_div {
+      text-align: center;
+     font-size: larger;
+     width: 900px;
+    height: 60px;
+      
+      background-color: white;
+    }
+
+    
+  }
 }

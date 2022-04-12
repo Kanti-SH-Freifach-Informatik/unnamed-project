@@ -16,7 +16,7 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
-              width: 175px;
+              width: 200px;
               height: 300px;
               font-size: 128px; }
               body main #center-flex-box {
@@ -25,3 +25,13 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center; }
+  body footer {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body footer #card_selection_div {
+      text-align: center;
+      font-size: larger;
+      width: 900px;
+      height: 60px;
+      background-color: white; }
