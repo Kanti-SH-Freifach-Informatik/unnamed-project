@@ -53,3 +53,5 @@ body {
         align-items: right; }
         body main #gametable #players-chat-box #player-ranking {
           background-color: white; }
+          body main #gametable #players-chat-box #chatbox {
+            background-color: white; }
