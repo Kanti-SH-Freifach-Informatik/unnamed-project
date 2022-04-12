@@ -2,7 +2,6 @@
 
 body {
   background-color: $basecolor;
-  ;
   margin: 0px;
 
   header {
@@ -10,55 +9,71 @@ body {
   }
 
   main {
-    .card-color-b {
-      background-color: blue;
-    }
-
-    .card-color-g {
-      background-color: green;
-    }
-
-    .card-color-y {
-      background-color: yellow;
-    }
-
-    .card-color-r {
-      background-color: red;
-    }
-
-    #top_card_background_div {
-      text-align: center;
+    #gametable {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 200px;
-      height: 300px;
-      font-size: 128px;
-    }
-
-    #center-flex-box {
       width: 100%;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    #card_selection_div {
-      text-align: center;
-     font-size: larger;
-     width: 900px;
-    height: 60px;
-      
-      background-color: white;
-    }
+      .card-color-b {
+        background-color: blue;
+      }
 
-    
+      .card-color-g {
+        background-color: green;
+      }
+
+      .card-color-y {
+        background-color: yellow;
+      }
+
+      .card-color-r {
+        background-color: red;
+      }
+
+      #top_card_background_div {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 300px;
+        font-size: 128px;
+      }
+
+      #play-area {
+
+        display: flex;
+        flex-direction: column;
+       height: 100%;
+       flex-grow: 1;
+
+
+        #center-flex-box {
+          width: 100%;
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #card_selection_div {
+          text-align: center;
+          font-size: larger;
+          width: 900px;
+          height: 60px;
+
+          background-color: white;
+        }
+      }
+
+      #players-chat-box {
+        background-color: aquamarine;
+        text-align: right;
+        width: 200px;
+        height: 100%;
+        justify-content: right;
+        align-items: right;
+      }
+    }
   }
 }

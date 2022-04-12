@@ -3,35 +3,47 @@ body {
   margin: 0px; }
   body header {
     background-color: #40c4ff; }
-    body main .card-color-b {
-      background-color: blue; }
-      body main .card-color-g {
-        background-color: green; }
-        body main .card-color-y {
-          background-color: yellow; }
-          body main .card-color-r {
-            background-color: red; }
-            body main #top_card_background_div {
-              text-align: center;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 200px;
-              height: 300px;
-              font-size: 128px; }
-              body main #center-flex-box {
-                width: 100%;
-                height: 100%;
+    body main #gametable {
+      display: flex;
+      width: 100%;
+      height: 100%; }
+      body main #gametable .card-color-b {
+        background-color: blue; }
+        body main #gametable .card-color-g {
+          background-color: green; }
+          body main #gametable .card-color-y {
+            background-color: yellow; }
+            body main #gametable .card-color-r {
+              background-color: red; }
+              body main #gametable #top_card_background_div {
+                text-align: center;
                 display: flex;
+                align-items: center;
                 justify-content: center;
-                align-items: center; }
-  body footer {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    body footer #card_selection_div {
-      text-align: center;
-      font-size: larger;
-      width: 900px;
-      height: 60px;
-      background-color: white; }
+                width: 200px;
+                height: 300px;
+                font-size: 128px; }
+                body main #gametable #play-area {
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  flex-grow: 1; }
+                  body main #gametable #play-area #center-flex-box {
+                    width: 100%;
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; }
+                    body main #gametable #play-area #card_selection_div {
+                      text-align: center;
+                      font-size: larger;
+                      width: 900px;
+                      height: 60px;
+                      background-color: white; }
+      body main #gametable #players-chat-box {
+        background-color: aquamarine;
+        text-align: right;
+        width: 200px;
+        height: 100%;
+        justify-content: right;
+        align-items: right; }
