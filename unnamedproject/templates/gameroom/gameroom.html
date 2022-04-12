@@ -15,7 +15,11 @@
     <div id="card-selection-frame">
       <div id="card_selection_div">
         
-        {{game.game_players[game.active_player].hand}}
+        {%for card in game.game_players[game.active_player].get_hand()%}
+         
+        {{card}}
+
+        {%endfor%}
 
       </div>
     </div>
