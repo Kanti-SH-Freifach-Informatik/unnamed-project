@@ -1,4 +1,7 @@
 from unnamedproject import db
+from unnamedproject.models.Card import Card
+from unnamedproject.utilities.card_utilities import parse_hand_str
+
 
 class GamePlayer(db.Model):
     _tablename__ = 'games_players'
@@ -8,3 +11,9 @@ class GamePlayer(db.Model):
     hand = db.Column(db.String(1000), nullable=False)
     player = db.relationship("Player", back_populates="games")
     game = db.relationship("Game", back_populates="game_players", cascade="all, delete")
+
+    def get_hand(self):
+        return parse_hand_str(self.hand)
+      
+
+
