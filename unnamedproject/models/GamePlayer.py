@@ -1,6 +1,6 @@
 from unnamedproject import db
 from unnamedproject.models.Card import Card
-from unnamedproject.utilities.card_utilities import parse_hand_str
+from unnamedproject.utilities.card_utilities import parse_hand_str, stringify_hand
 
 
 class GamePlayer(db.Model):
@@ -14,6 +14,8 @@ class GamePlayer(db.Model):
 
     def get_hand(self):
         return parse_hand_str(self.hand)
-      
+    
+    def set_hand(self, hand):
+        return stringify_hand(hand)    
 
 

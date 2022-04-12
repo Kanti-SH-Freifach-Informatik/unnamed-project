@@ -42,6 +42,18 @@ def update(game_id, played_card):
         db.session.commit()
     return render_template("games/show.html", game=game)
 
+# POST /:game_id/draw
+def update(game_id):
+    game = Game.query.filter_by(id=game_id).first()
+    player = game.game_players[game.active_player]
+    hand = player.get_hand()
+    hand.append(Card())
+    player.hand = player.set_hand(hand)
+    game.active_player = (game.active_player + 1) %4
+    db.session.commit()
+    return render_template("games/show.html", game=game)
+
+
 # DELETE /:game_id
 def delete(game_id):
     game = Game.query.filter_by(id=game_id).first()
