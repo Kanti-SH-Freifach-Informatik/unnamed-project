@@ -1,45 +1,34 @@
-{% extends 'base-layout.html' %}
-
-{%block header%}
-
-{%endblock%}
-
-{% block content %}
+{% extends 'base-layout.html' %} {%block header%} {%endblock%} {% block content
+%}
 <div id="gametable">
-
   <div id="play-area">
-   
     <div id="center-flex-box">
-      <div id="top_card_background_div" class="card card-color-{{ game.get_top_card().color.value.lower()}}">
-          <p id="top_card_number" class="card">{{game.get_top_card().value.value}}</p>
+      <div
+        id="top_card_background_div"
+        class="card card-color-{{ game.get_top_card().color.value.lower()}}"
+      >
+        <p id="top_card_number" class="card">
+          {{game.get_top_card().value.value}}
+        </p>
       </div>
-
-
     </div>
-    <div id="card_selection_div">
-      <p>*Card Selection*</p>
+    <div id="card-selection-frame">
+      <div id="card_selection_div">
+        <p>*Card Selection*</p>
+      </div>
     </div>
+  </div>
+  <div id="players-chat-box">
+    <p>Player List</p>
+    <ol id="player-ranking">
+      <li>Numero Uno</li>
+      <li>2nd</li>
+      <li>3rd</li>
+      <li>4th</li>
+    </ol>
+    
+
 
   </div>
-
-
- 
-
- <div id="players-chat-box">
-  <p> Player List </p>
-  <ol>
-   <li>Numero Uno</li>
-   <li>2nd</li>
-   <li>3rd</li>
-   <li>4th</li>
-   </ol>
+  {% endblock %} {%block footer%} {% endblock %}
 </div>
-
-
-
-</div>
-{% endblock %}
-
-{%block footer%}
-
-{% endblock %}

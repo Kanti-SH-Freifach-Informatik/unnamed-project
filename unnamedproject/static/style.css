@@ -25,25 +25,31 @@ body {
                 font-size: 128px; }
                 body main #gametable #play-area {
                   display: flex;
-                  flex-direction: column;
                   height: 100%;
-                  flex-grow: 1; }
+                  flex-grow: 1;
+                  flex-direction: column; }
                   body main #gametable #play-area #center-flex-box {
                     width: 100%;
                     flex-grow: 1;
                     display: flex;
                     justify-content: center;
                     align-items: center; }
-                    body main #gametable #play-area #card_selection_div {
-                      text-align: center;
-                      font-size: larger;
-                      width: 900px;
+                    body main #gametable #play-area #card-selection-frame {
                       height: 60px;
-                      background-color: white; }
+                      display: flex;
+                      justify-content: center;
+                      width: 100%; }
+                      body main #gametable #play-area #card-selection-frame #card_selection_div {
+                        font-size: larger;
+                        width: 900px;
+                        background-color: white;
+                        text-align: center; }
       body main #gametable #players-chat-box {
         background-color: aquamarine;
-        text-align: right;
+        text-align: center;
         width: 200px;
         height: 100%;
         justify-content: right;
         align-items: right; }
+        body main #gametable #players-chat-box #player-ranking {
+          background-color: white; }

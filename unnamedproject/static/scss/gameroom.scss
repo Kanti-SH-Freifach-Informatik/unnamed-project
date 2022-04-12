@@ -41,13 +41,11 @@ body {
       }
 
       #play-area {
-
         display: flex;
+        height: 100%;
+        flex-grow: 1;
         flex-direction: column;
-       height: 100%;
-       flex-grow: 1;
-
-
+        
         #center-flex-box {
           width: 100%;
           flex-grow: 1;
@@ -55,24 +53,35 @@ body {
           justify-content: center;
           align-items: center;
         }
-
-        #card_selection_div {
-          text-align: center;
-          font-size: larger;
-          width: 900px;
+        #card-selection-frame {
           height: 60px;
+          display: flex;
+          justify-content: center;
+          width: 100%;
 
-          background-color: white;
+          #card_selection_div {
+            font-size: larger;
+            width: 900px;
+            background-color: white;
+            text-align: center;
+          }
         }
       }
 
       #players-chat-box {
         background-color: aquamarine;
-        text-align: right;
+        text-align: center;
         width: 200px;
         height: 100%;
         justify-content: right;
         align-items: right;
+
+        #player-ranking {
+
+          background-color: white;
+
+        }
+
       }
     }
   }
