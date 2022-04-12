@@ -16,6 +16,10 @@ class GamePlayer(db.Model):
         return parse_hand_str(self.hand)
     
     def set_hand(self, hand):
-        return stringify_hand(hand)    
+        def sort_key(c):
+            return (c.color.value, c.value.value)
+        hand = sorted(hand,key = sort_key)
+        return stringify_hand(hand) 
+
 
 
