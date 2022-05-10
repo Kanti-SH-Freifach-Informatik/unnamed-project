@@ -21,7 +21,7 @@ def create():
     top_card = Card()
     game = Game(active_player= 0, top_card=str(top_card))
     for i, p in enumerate(players):
-        gp = GamePlayer(order=i, hand=generate_hand_str(7))
+        gp = GamePlayer(order=i, hand=generate_hand_str(1))
         gp.player = p
         game.game_players.append(gp)
     db.session.add(game)
@@ -37,13 +37,20 @@ def update(game_id, played_card):
     if len(hand) > played_card and is_playable (top_card,hand[played_card]):
         game.top_card = str(hand[played_card])
         hand.pop(played_card)
-        player.hand = stringify_hand(hand)      
+        player.hand = stringify_hand(hand)
+        active_player = game.active_player      
+    if  player.check_win():
+        db.session.delete(game.game_players)
+        db.session.delete(game)
+        db.session.commit()
+        return render_template("game/show.html", active_player)
+    else:
         game.active_player = (game.active_player + 1 ) %4
         db.session.commit()
-    return render_template("games/show.html", game=game)
+        return render_template("games/show.html", game=game)
 
 # POST /:game_id/draw
-def update(game_id):
+def draw(game_id):
     game = Game.query.filter_by(id=game_id).first()
     player = game.game_players[game.active_player]
     hand = player.get_hand()
