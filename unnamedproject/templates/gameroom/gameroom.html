@@ -28,12 +28,12 @@
         {%if game.active_player+1 == player.player_id%}
         <li>
           <b class="player-ranking-name">>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spieler {{player.player_id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</b>
-          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand.size}}</p>
+          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand()|length}}</p>
         </li>
         {%else%}
         <li>
           <b class="player-ranking-name">Spieler {{player.player_id}}</b>
-          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand.size}}</p>
+          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand()|length}}</p>
         </li>
         {%endif%}
       {%endfor%}
