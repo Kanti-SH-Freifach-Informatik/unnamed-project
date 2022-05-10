@@ -4,7 +4,7 @@ from unnamedproject import db
 from unnamedproject.models.Game import Game
 from unnamedproject.models.GamePlayer import GamePlayer
 from unnamedproject.models.Player import Player
-from unnamedproject.models.Card import Card
+from unnamedproject.models.Card import Card, CardValue
 from unnamedproject.utilities.card_utilities import generate_hand_str, is_playable, stringify_hand
 
 # GET /
@@ -41,9 +41,13 @@ def update(game_id, played_card):
     hand = player.get_hand()
     top_card = Card (representation = game.top_card)
     if len(hand) > played_card and is_playable (top_card,hand[played_card]):
-        game.top_card = str(hand[played_card])
+        card = hand[played_card]
+        game.top_card = str(card)
         hand.pop(played_card)
-        player.hand = player.set_hand(hand)      
+        player.hand = player.set_hand(hand)  
+    if  card.value == CardValue.SKIP :
+        game.active_player = (game.active_player + 2 ) %4
+    else :
         game.active_player = (game.active_player + 1 ) %4
         db.session.commit()
     return render_template("games/show.html", game=game)
