@@ -69,7 +69,7 @@ body {
       }
 
       #players-chat-box {
-        background-color: aquamarine;
+        background-color: $lightcolor;
         text-align: center;
         width: 200px;
         height: 100%;
@@ -77,8 +77,9 @@ body {
         align-items: right;
 
         #player-ranking {
-
+          padding: 0px;
           background-color: white;
+          list-style-type: none;
 
         }
 

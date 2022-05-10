@@ -5,8 +5,7 @@
     <div id="center-flex-box">
       <div
         id="top_card_background_div"
-        class="card card-color-{{ game.get_top_card().color.value.lower()}}"
-      >
+        class="card card-color-{{ game.get_top_card().color.value.lower()}}">
         <p id="top_card_number" class="card">
           {{game.get_top_card().value.value}}
         </p>
@@ -14,23 +13,25 @@
     </div>
     <div id="card-selection-frame">
       <div id="card_selection_div">
-        
         {%for card in game.game_players[game.active_player].get_hand()%}
          
         {{card}}
 
         {%endfor%}
-
       </div>
     </div>
   </div>
   <div id="players-chat-box">
-    <p>Player List</p>
-    <ol id="player-ranking">
-      <li>Numero Uno</li>
-      <li>2nd</li>
-      <li>3rd</li>
-      <li>4th</li>
+    <p>Spielerliste</p>
+    <ul id="player-ranking">
+      {%for player in game.game_players%}
+        {%if game.active_player+1 == player.player_id%}
+        <li> >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spieler {{player.player_id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</li>
+        {%else%}
+        <li>Spieler {{player.player_id}}</li>
+        {%endif%}
+      {%endfor%}
+      
     </ol>
     
     <div id="space-between-list-and-chat">
