@@ -7,6 +7,7 @@ body {
       display: flex;
       width: 100%;
       height: 100%; }
+<<<<<<< HEAD
       body main #gametable #top_card_background_div {
         text-align: center;
         display: flex;
@@ -36,6 +37,47 @@ body {
                 width: 900px;
                 background-color: white;
                 text-align: center; }
+=======
+      body main #gametable .card-color-b {
+        background-color: blue; }
+        body main #gametable .card-color-g {
+          background-color: green; }
+          body main #gametable .card-color-y {
+            background-color: yellow; }
+            body main #gametable .card-color-r {
+              background-color: red; }
+              body main #gametable #top_card_background_div {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 200px;
+                height: 300px;
+                font-size: 128px; }
+                body main #gametable #play-area {
+                  display: flex;
+                  height: 100%;
+                  flex-grow: 1;
+                  flex-direction: column; }
+                  body main #gametable #play-area #center-flex-box {
+                    width: 100%;
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; }
+                    body main #gametable #play-area #card-selection-frame {
+                      height: 150px;
+                      display: flex;
+                      justify-content: center;
+                      width: 100%;
+                      align-items: center;
+                      background-color: #82f7ff; }
+                      body main #gametable #play-area #card-selection-frame #card_selection_div {
+                        font-size: larger;
+                        width: 900px;
+                        background-color: #82f7ff;
+                        text-align: center; }
+>>>>>>> a3c123f2c8341cb0d06b058bab8890755e97bb89
       body main #gametable #players-chat-box {
         background-color: #82f7ff;
         text-align: center;

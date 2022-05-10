@@ -9,8 +9,8 @@
       <div id="card_selection_div">
         {%for card in game.game_players[game.active_player].get_hand()%}
          
-        {{card}} 
-    
+        <img src="../../../static/images/cards/{{card}}.svg" width="80">
+
         {%endfor%}
       </div>
     </div>

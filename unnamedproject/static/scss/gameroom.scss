@@ -38,15 +38,17 @@ body {
           align-items: center;
         }
         #card-selection-frame {
-          height: 60px;
+          height: 150px;
           display: flex;
           justify-content: center;
           width: 100%;
+          align-items: center;
+          background-color: $lightcolor;
 
           #card_selection_div {
             font-size: larger;
             width: 900px;
-            background-color: white;
+            background-color: $lightcolor;
             text-align: center;
 
             
