@@ -9,7 +9,8 @@
       <div id="card_selection_div">
         {%for card in game.game_players[game.active_player].get_hand()%}
          
-        {{card}}
+        {{card}} 
+        
 
         {%endfor%}
       </div>
@@ -22,12 +23,12 @@
         {%if game.active_player+1 == player.player_id%}
         <li>
           <b class="player-ranking-name">>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spieler {{player.player_id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</b>
-          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand.size}}</p>
+          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand()|length}}</p>
         </li>
         {%else%}
         <li>
           <b class="player-ranking-name">Spieler {{player.player_id}}</b>
-          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand.size}}</p>
+          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand()|length}}</p>
         </li>
         {%endif%}
       {%endfor%}
@@ -35,8 +36,17 @@
     </ol>
     
     <div id="space-between-list-and-chat">
-      <div id="chatbox">
+      <div id="chatbox">    
 
+        <form action="{{ url_for('games.create')}}" method="post">
+          <h1>Chat</h1>
+      
+          <label for="msg"><b>Message</b></label>
+          <textarea placeholder="Type message.." name="msg" required></textarea>
+      
+          <button type="submit" class="btn">Send</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
 
       </div>
 
