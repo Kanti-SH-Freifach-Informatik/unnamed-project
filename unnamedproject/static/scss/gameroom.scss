@@ -74,22 +74,26 @@ body {
       }
 
       #players-chat-box {
-        background-color: aquamarine;
+        background-color: $lightcolor;
         text-align: center;
-        width: 200px;
+        width: 250px;
         height: 100%;
         justify-content: right;
         align-items: right;
 
         #player-ranking {
-
+          padding: 0px;
           background-color: white;
+          list-style-type: none;
 
         }
 
-        #space-between-list-and-chat {
+        .player-ranking-name {
+          margin: 0px;
+        }
 
-
+        #player-ranking-name-cardcount {
+          margin-bottom: 8px;
         }
 
         #chatbox {

@@ -45,13 +45,19 @@ body {
                         background-color: white;
                         text-align: center; }
       body main #gametable #players-chat-box {
-        background-color: aquamarine;
+        background-color: #82f7ff;
         text-align: center;
-        width: 200px;
+        width: 250px;
         height: 100%;
         justify-content: right;
         align-items: right; }
         body main #gametable #players-chat-box #player-ranking {
-          background-color: white; }
-          body main #gametable #players-chat-box #chatbox {
-            background-color: white; }
+          padding: 0px;
+          background-color: white;
+          list-style-type: none; }
+          body main #gametable #players-chat-box .player-ranking-name {
+            margin: 0px; }
+            body main #gametable #players-chat-box #player-ranking-name-cardcount {
+              margin-bottom: 8px; }
+              body main #gametable #players-chat-box #chatbox {
+                background-color: white; }
