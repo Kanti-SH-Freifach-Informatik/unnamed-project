@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 
 from unnamedproject import db
 from unnamedproject.models.Game import Game
@@ -17,16 +17,22 @@ def show(game_id):
 
 # POST /
 def create():
-    players = Player.query.limit(4).all()
-    top_card = Card()
-    game = Game(active_player= 0, top_card=str(top_card))
-    for i, p in enumerate(players):
-        gp = GamePlayer(order=i, hand=generate_hand_str(7))
-        gp.player = p
-        game.game_players.append(gp)
-    db.session.add(game)
-    db.session.commit()
-    return render_template("games/show.html", game=game)
+    n = request.form["number-of-players"]
+    if n is not None and n.isdigit() and int(n)>=2 and int(n)<=8 :
+        players = Player.query.limit(int(n)).all()
+        top_card = Card()
+        game = Game(active_player= 0, top_card=str(top_card))
+        for i, p in enumerate(players):
+            gp = GamePlayer(order=i, hand=generate_hand_str(7))
+            gp.player = p
+            game.game_players.append(gp)
+        db.session.add(game)
+        db.session.commit()
+        return render_template("games/show.html", game=game)
+    else : 
+        return render_template('home.html')
+
+
 
 # POST /:game_id/:played_card
 def update(game_id, played_card):
