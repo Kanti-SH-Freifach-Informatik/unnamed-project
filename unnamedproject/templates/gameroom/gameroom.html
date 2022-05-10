@@ -26,9 +26,15 @@
     <ul id="player-ranking">
       {%for player in game.game_players%}
         {%if game.active_player+1 == player.player_id%}
-        <li> >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spieler {{player.player_id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</li>
+        <li>
+          <b class="player-ranking-name">>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spieler {{player.player_id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</b>
+          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand.size}}</p>
+        </li>
         {%else%}
-        <li>Spieler {{player.player_id}}</li>
+        <li>
+          <b class="player-ranking-name">Spieler {{player.player_id}}</b>
+          <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand.size}}</p>
+        </li>
         {%endif%}
       {%endfor%}
       
