@@ -7,10 +7,15 @@
     </div>
     <div id="card-selection-frame">
       <div id="card_selection_div">
+        {%set i=-1%}
         {%for card in game.game_players[game.active_player].get_hand()%}
-         
-        <img src="../../../static/images/cards/{{card}}.svg" width="80">
-
+        {%set i=i+1%}
+        <p>{{ url_for('games/game.id/i')}}</p>
+        <form class="card-selection-form" action="{{ url_for('games/game.id/i')}}">
+          <button class="card-selection-form-button">
+            <img src="../../../static/images/cards/{{card}}.svg" width="80">
+          </button>
+        </form>
         {%endfor%}
       </div>
     </div>

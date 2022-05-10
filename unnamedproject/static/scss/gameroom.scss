@@ -24,6 +24,16 @@ body {
         font-size: 128px;
       }
 
+      .card-selection-form {
+        display: inline-block;
+        .card-selection-form-button {
+          border: none;
+          outline: none;
+          background-color: transparent;
+          box-shadow: none;
+        }
+      }
+
       #play-area {
         display: flex;
         height: 100%;
