@@ -35,14 +35,16 @@ body {
                     justify-content: center;
                     align-items: center; }
                     body main #gametable #play-area #card-selection-frame {
-                      height: 60px;
+                      height: 150px;
                       display: flex;
                       justify-content: center;
-                      width: 100%; }
+                      width: 100%;
+                      align-items: center;
+                      background-color: #82f7ff; }
                       body main #gametable #play-area #card-selection-frame #card_selection_div {
                         font-size: larger;
                         width: 900px;
-                        background-color: white;
+                        background-color: #82f7ff;
                         text-align: center; }
       body main #gametable #players-chat-box {
         background-color: #82f7ff;
