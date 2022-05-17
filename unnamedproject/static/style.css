@@ -33,18 +33,31 @@ body {
           display: flex;
           justify-content: center;
           align-items: center; }
-          body main #gametable #play-area #card-selection-frame {
-            height: 150px;
+          body main #gametable #play-area #action-bar {
+            height: 200px;
             display: flex;
             justify-content: center;
             width: 100%;
             align-items: center;
-            background-color: #82f7ff; }
-            body main #gametable #play-area #card-selection-frame #card_selection_div {
+            background-color: #82f7ff;
+            padding-top: 25px;
+            padding-bottom: 25px; }
+            body main #gametable #play-area #action-bar #card_selection_div {
               font-size: larger;
-              width: 900px;
+              width: 1000px;
+              height: 100%;
               background-color: #82f7ff;
-              text-align: center; }
+              text-align: center;
+              overflow: scroll; }
+              body main #gametable #play-area #action-bar #draw-button-frame {
+                align-self: right; }
+                body main #gametable #play-area #action-bar #draw-button-frame #draw-button-form {
+                  padding: 0px;
+                  margin: 0px; }
+                  body main #gametable #play-area #action-bar #draw-button-frame #draw-button-form #draw-button {
+                    padding: 50px;
+                    background-color: red;
+                    border: none; }
       body main #gametable #players-chat-box {
         background-color: #82f7ff;
         text-align: center;
