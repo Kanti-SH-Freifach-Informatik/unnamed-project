@@ -44,12 +44,17 @@ def update(game_id, played_card):
         card = hand[played_card]
         game.top_card = str(card)
         hand.pop(played_card)
-        player.hand = player.set_hand(hand)  
+        player.hand = player.set_hand(hand)
+    if card.value == CardValue.REVERSE :
+        for gp in game.game_players:
+            gp.order = len(game.game_players) - gp.order - 1 
+        game.active_player = len(game.game_players) - game.active_player - 1
+        
     if  card.value == CardValue.SKIP :
-        game.active_player = (game.active_player + 2 ) %4
+        game.active_player = (game.active_player + 2 ) %len(game.game_players)
     else :
-        game.active_player = (game.active_player + 1 ) %4
-        db.session.commit()
+        game.active_player = (game.active_player + 1 ) %len(game.game_players)
+    db.session.commit()
     return render_template("games/show.html", game=game)
 
 # POST /:game_id/draw
