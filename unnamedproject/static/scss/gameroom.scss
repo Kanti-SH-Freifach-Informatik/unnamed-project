@@ -26,6 +26,7 @@ body {
 
       .card-selection-form {
         display: inline-block;
+
         .card-selection-form-button {
           border: none;
           outline: none;
@@ -39,7 +40,7 @@ body {
         height: 100%;
         flex-grow: 1;
         flex-direction: column;
-        
+
         #center-flex-box {
           width: 100%;
           flex-grow: 1;
@@ -47,6 +48,7 @@ body {
           justify-content: center;
           align-items: center;
         }
+
         #card-selection-frame {
           height: 150px;
           display: flex;
@@ -60,11 +62,19 @@ body {
             width: 900px;
             background-color: $lightcolor;
             text-align: center;
+          }
 
-            
-
-
-
+          #draw-button-frame {
+            align-self: right;
+            #draw-button-form {
+              padding: 0px;
+              margin: 0px;
+              #draw-button {
+                padding: 50px;
+                background-color: red;
+                border: none;
+              }
+            }
           }
         }
       }

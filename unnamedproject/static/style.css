@@ -45,6 +45,15 @@ body {
               width: 900px;
               background-color: #82f7ff;
               text-align: center; }
+              body main #gametable #play-area #card-selection-frame #draw-button-frame {
+                align-self: right; }
+                body main #gametable #play-area #card-selection-frame #draw-button-frame #draw-button-form {
+                  padding: 0px;
+                  margin: 0px; }
+                  body main #gametable #play-area #card-selection-frame #draw-button-frame #draw-button-form #draw-button {
+                    padding: 50px;
+                    background-color: red;
+                    border: none; }
       body main #gametable #players-chat-box {
         background-color: #82f7ff;
         text-align: center;
