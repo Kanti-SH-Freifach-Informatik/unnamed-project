@@ -1,5 +1,5 @@
 from flask import Blueprint
-from unnamedproject.controllers.game_controller import index, show, create, update, delete,draw
+from unnamedproject.controllers.game_controller import index, show, create, update, delete, draw
 
 game_bp = Blueprint('games', __name__)
 

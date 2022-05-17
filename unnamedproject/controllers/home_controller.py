@@ -2,4 +2,5 @@ from flask import render_template
 
 # GET /
 def index():
-    return render_template('home.html')
+    name = "Eis"
+    return render_template('waitinglobby.html', name=name)

@@ -1,4 +1,77 @@
 body {
-  background-color: blue; }
+  background-color: #40c4ff;
+  margin: 0px; }
   body header {
-    background-color: red; }
+    background-color: #40c4ff; }
+    body main #gametable {
+      display: flex;
+      width: 100%;
+      height: 100%; }
+      body main #gametable #top_card_background_div {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 300px;
+        font-size: 128px; }
+        body main #gametable .card-selection-form {
+          display: inline-block; }
+          body main #gametable .card-selection-form .card-selection-form-button {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            box-shadow: none; }
+      body main #gametable #play-area {
+        display: flex;
+        height: 100%;
+        flex-grow: 1;
+        flex-direction: column; }
+        body main #gametable #play-area #center-flex-box {
+          width: 100%;
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          body main #gametable #play-area #action-bar {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+            background-color: #82f7ff;
+            padding-top: 25px;
+            padding-bottom: 25px; }
+            body main #gametable #play-area #action-bar #card_selection_div {
+              font-size: larger;
+              width: 1000px;
+              height: 100%;
+              background-color: #82f7ff;
+              text-align: center;
+              overflow: scroll; }
+              body main #gametable #play-area #action-bar #draw-button-frame {
+                align-self: right; }
+                body main #gametable #play-area #action-bar #draw-button-frame #draw-button-form {
+                  padding: 0px;
+                  margin: 0px; }
+                  body main #gametable #play-area #action-bar #draw-button-frame #draw-button-form #draw-button {
+                    padding: 50px;
+                    background-color: red;
+                    border: none; }
+      body main #gametable #players-chat-box {
+        background-color: #82f7ff;
+        text-align: center;
+        width: 250px;
+        height: 100%;
+        justify-content: right;
+        align-items: right; }
+        body main #gametable #players-chat-box #player-ranking {
+          padding: 0px;
+          background-color: white;
+          list-style-type: none; }
+          body main #gametable #players-chat-box .player-ranking-name {
+            margin: 0px; }
+            body main #gametable #players-chat-box #player-ranking-name-cardcount {
+              margin-bottom: 8px; }
+              body main #gametable #players-chat-box #chatbox {
+                background-color: white; }

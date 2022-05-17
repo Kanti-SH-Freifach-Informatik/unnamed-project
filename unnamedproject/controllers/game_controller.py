@@ -28,9 +28,9 @@ def create():
             game.game_players.append(gp)
         db.session.add(game)
         db.session.commit()
-        return render_template("games/show.html", game=game)
+        return render_template("games/gameroom.html", game=game)
     else : 
-        return render_template('home.html')
+        return render_template('waitinglobby.html')
 
 
 
@@ -60,7 +60,7 @@ def update(game_id, played_card):
         else :
             game.active_player = (game.active_player + 1 ) %len(game.game_players)
         db.session.commit()
-        return render_template("games/show.html", game=game)
+        return render_template("games/gameroom.html", game=game)
 
 # POST /:game_id/draw
 def draw(game_id):
@@ -71,7 +71,7 @@ def draw(game_id):
     player.hand = player.set_hand(hand)
     game.active_player = (game.active_player + 1) %4
     db.session.commit()
-    return render_template("games/show.html", game=game)
+    return render_template("gameroom/gameroom.html", game=game)
 
 # DELETE /:game_id
 def delete(game_id):
