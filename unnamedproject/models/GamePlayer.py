@@ -19,7 +19,8 @@ class GamePlayer(db.Model):
         def sort_key(c):
             return (c.color.value, c.value.value)
         hand = sorted(hand,key = sort_key)
-        return stringify_hand(hand) 
+        self.hand = stringify_hand(hand) 
+        return self.hand
 
     def check_win(self):
         return len(self.hand) == 0
