@@ -2,7 +2,7 @@
 <div id="gametable">
   <div id="play-area">
     <div id="center-flex-box">
-      <img src="../../../static/images/cards/{{game.get_top_card()}}.svg" width="250">
+      <img src="{{ url_for('static', filename='images/cards/' ~ game.get_top_card() ~ ('.svg' if game.get_top_card().value.value < 10 else '.jpg'))}}" width="250">
     </div>
     <div id="action-bar">
       <div id="card_selection_div">
@@ -10,7 +10,7 @@
         <form class="card-selection-form"
           action="{{ url_for('games.update', game_id=game.id, played_card=loop.index0) }}">
           <button class="card-selection-form-button">
-            <img src="../../../static/images/cards/{{card}}.svg" width="80">
+            <img src="{{ url_for('static', filename='images/cards/' ~ card ~ ('.svg' if card.value.value < 10 else '.jpg') )}}" width="80">
           </button>
         </form>
         {%endfor%}
