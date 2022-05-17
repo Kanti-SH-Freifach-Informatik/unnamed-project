@@ -9,6 +9,12 @@ app.config.from_object('unnamedproject.config')
 # Database
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+def _fk_pragma_on_connect(dbapi_con, con_record):  # noqa
+    dbapi_con.execute('pragma foreign_keys=ON')
+
+with app.app_context():
+    from sqlalchemy import event
+    event.listen(db.engine, 'connect', _fk_pragma_on_connect)
 
 # Assets
 assets = Environment(app)
