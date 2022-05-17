@@ -70,7 +70,7 @@ def draw(game_id):
     hand = player.get_hand()
     hand.append(Card())
     player.hand = player.set_hand(hand)
-    game.active_player = (game.active_player + 1) %len(game.game_player)
+    game.active_player = (game.active_player + 1) %len(game.game_players)
     db.session.commit()
     return render_template("gameroom/gameroom.html", game=game)
 
