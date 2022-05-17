@@ -49,19 +49,23 @@ body {
           align-items: center;
         }
 
-        #card-selection-frame {
-          height: 150px;
+        #action-bar {
+          height: 200px;
           display: flex;
           justify-content: center;
           width: 100%;
           align-items: center;
           background-color: $lightcolor;
+          padding-top: 25px;
+          padding-bottom: 25px;
 
           #card_selection_div {
             font-size: larger;
-            width: 900px;
+            width: 1000px;
+            height: 100%;
             background-color: $lightcolor;
             text-align: center;
+            overflow: scroll;
           }
 
           #draw-button-frame {

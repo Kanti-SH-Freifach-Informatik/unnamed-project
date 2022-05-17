@@ -4,7 +4,7 @@
     <div id="center-flex-box">
       <img src="../../../static/images/cards/{{game.get_top_card()}}.svg" width="250">
     </div>
-    <div id="card-selection-frame">
+    <div id="action-bar">
       <div id="card_selection_div">
         {%for card in game.game_players[game.active_player].get_hand()%}
         <form class="card-selection-form"
