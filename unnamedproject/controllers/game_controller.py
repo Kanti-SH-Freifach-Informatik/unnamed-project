@@ -31,23 +31,28 @@ def create():
 # POST /:game_id/:played_card
 def update(game_id, played_card):
     game = Game.query.filter_by(id=game_id).first()
-    card = Card (representation = played_card)
+    player = game.game_players[game.active_player]
+    hand = player.get_hand()
     top_card = Card (representation = game.top_card)
-    if is_playable (top_card,card):
-        player = game.game_players[game.active_player]
-        new_hand = [] 
-        found = False 
-        for c in player.get_hand():
-            if c.value == card.value and c.color == card.color and not found:
-                found = True 
-                continue
-            else:
-                new_hand.append(c)
-        player.hand = stringify_hand(new_hand)      
-        game.top_card = played_card 
+    if len(hand) > played_card and is_playable (top_card,hand[played_card]):
+        game.top_card = str(hand[played_card])
+        hand.pop(played_card)
+        player.hand = player.set_hand(hand)      
         game.active_player = (game.active_player + 1 ) %4
         db.session.commit()
     return render_template("games/show.html", game=game)
+
+# POST /:game_id/draw
+def update(game_id):
+    game = Game.query.filter_by(id=game_id).first()
+    player = game.game_players[game.active_player]
+    hand = player.get_hand()
+    hand.append(Card())
+    player.hand = player.set_hand(hand)
+    game.active_player = (game.active_player + 1) %4
+    db.session.commit()
+    return render_template("games/show.html", game=game)
+
 
 # DELETE /:game_id
 def delete(game_id):
