@@ -2,7 +2,7 @@
 <div id="gametable">
   <div id="play-area">
     <div id="center-flex-box">
-      <img src="{{ url_for('static', filename='images/cards/' ~ game.get_top_card() ~ ('.svg' if game.get_top_card().value.value < 10 else '.png'))}}" width="250">
+      <img src="{{ url_for('static', filename='images/cards/' ~ game.get_top_card() ~ ('.svg' if game.get_top_card().value.value < 10 else '.jpg'))}}" width="250">
     </div>
     <div id="action-bar">
       <div id="card_selection_div">
