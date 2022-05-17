@@ -22,6 +22,5 @@ class GamePlayer(db.Model):
         hand = sorted(hand,key = sort_key)
         return stringify_hand(hand) 
 
-
     def check_win(self):
         return len(self.hand) == 0
