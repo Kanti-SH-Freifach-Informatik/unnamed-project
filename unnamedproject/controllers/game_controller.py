@@ -38,12 +38,10 @@ def update(game_id, played_card):
         game.top_card = str(hand[played_card])
         hand.pop(played_card)
         player.hand = stringify_hand(hand)
-        active_player = game.active_player      
     if  player.check_win():
-        db.session.delete(game.game_players)
-        db.session.delete(game)
+        active_player = game.active_player      
         db.session.commit()
-        return render_template("game/show.html", active_player)
+        return render_template("games/win.html", winner=active_player)
     else:
         game.active_player = (game.active_player + 1 ) %4
         db.session.commit()
