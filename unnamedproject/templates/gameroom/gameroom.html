@@ -6,11 +6,8 @@
     </div>
     <div id="card-selection-frame">
       <div id="card_selection_div">
-        {%set i=-1%}
         {%for card in game.game_players[game.active_player].get_hand()%}
-        {%set i=i+1%}
-        <p>{{ url_for('games/game.id/i')}}</p>
-        <form class="card-selection-form" action="{{ url_for('games/game.id/i')}}">
+        <form class="card-selection-form" action="{{ url_for('games.update', game_id=game.id, played_card=loop.index0) }}">
           <button class="card-selection-form-button">
             <img src="../../../static/images/cards/{{card}}.svg" width="80">
           </button>
