@@ -20,6 +20,7 @@ class CardValue(Enum):
     SEVEN = 7
     EIGHT = 8
     NINE = 9
+    SKIP = 10
 
 
 class Card:
