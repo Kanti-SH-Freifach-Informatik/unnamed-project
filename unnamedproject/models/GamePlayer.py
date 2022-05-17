@@ -5,9 +5,8 @@ from unnamedproject.utilities.card_utilities import parse_hand_str, stringify_ha
 
 class GamePlayer(db.Model):
     _tablename__ = 'games_players'
-    id = db.Column(db.Integer, primary_key=True)
-    game_id = db.Column(db.ForeignKey('games.id'))
-    player_id = db.Column(db.ForeignKey('players.id'))
+    game_id = db.Column(db.ForeignKey('games.id'), primary_key=True)
+    player_id = db.Column(db.ForeignKey('players.id'), primary_key=True)
     order = db.Column(db.Integer, nullable=False)
     hand = db.Column(db.String(1000), nullable=False)
     player = db.relationship("Player", back_populates="games")

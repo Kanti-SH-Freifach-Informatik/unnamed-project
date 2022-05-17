@@ -28,7 +28,7 @@ def create():
             game.game_players.append(gp)
         db.session.add(game)
         db.session.commit()
-        return render_template("games/gameroom.html", game=game)
+        return render_template("gameroom/gameroom.html", game=game)
     else : 
         return render_template('waitinglobby.html')
 
@@ -45,22 +45,22 @@ def update(game_id, played_card):
         game.top_card = str(card)
         hand.pop(played_card)
         player.set_hand(hand)
-    if  player.check_win():
-        active_player = game.active_player
-        db.session.commit()
-        return render_template("games/win.html", winner=active_player)
-    else: 
-        if card.value == CardValue.REVERSE :
-            for gp in game.game_players:
-                gp.order = len(game.game_players) - gp.order - 1 
-            game.active_player = len(game.game_players) - game.active_player - 1
-            
-        if  card.value == CardValue.SKIP :
-            game.active_player = (game.active_player + 2 ) %len(game.game_players)
-        else :
-            game.active_player = (game.active_player + 1 ) %len(game.game_players)
-        db.session.commit()
-        return render_template("games/gameroom.html", game=game)
+        if  player.check_win():
+            active_player = game.active_player
+            db.session.commit()
+            return render_template("games/win.html", winner=active_player)
+        else: 
+            if card.value == CardValue.REVERSE :
+                for gp in game.game_players:
+                    gp.order = len(game.game_players) - gp.order - 1 
+                game.active_player = len(game.game_players) - game.active_player - 1
+                
+            if  card.value == CardValue.SKIP :
+                game.active_player = (game.active_player + 2 ) %len(game.game_players)
+            else :
+                game.active_player = (game.active_player + 1 ) %len(game.game_players)
+            db.session.commit()
+    return render_template("gameroom/gameroom.html", game=game)
 
 # POST /:game_id/draw
 def draw(game_id):
