@@ -18,6 +18,13 @@ body {
         justify-content: center;
         transform: scale(3);
         padding-top: 5%;
+        
+      #lobby-hmp {
+
+        text-decoration: none;
+        color: navy;
+
+      }
 
 
       #creategamebutton {
@@ -28,7 +35,21 @@ body {
       }
 
     }
+    
+    #lobby-ee {
 
+
+      text-align: left;
+      padding-top: 9cm;
+
+      #lobby-eastr {
+
+        text-decoration: none;
+        color: $basecolor;
+
+      }
+
+    }
     
     #gametable {
       display: flex;

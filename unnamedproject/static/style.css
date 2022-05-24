@@ -9,9 +9,18 @@ body {
       justify-content: center;
       transform: scale(3);
       padding-top: 5%; }
-      body main #lobby-chooseplayercount #creategamebutton {
-        background-color: #82f7ff;
-        color: midnightblue; }
+      body main #lobby-chooseplayercount #lobby-hmp {
+        text-decoration: none;
+        color: navy; }
+        body main #lobby-chooseplayercount #creategamebutton {
+          background-color: #82f7ff;
+          color: midnightblue; }
+    body main #lobby-ee {
+      text-align: left;
+      padding-top: 9cm; }
+      body main #lobby-ee #lobby-eastr {
+        text-decoration: none;
+        color: #40c4ff; }
     body main #gametable {
       display: flex;
       width: 100%;
