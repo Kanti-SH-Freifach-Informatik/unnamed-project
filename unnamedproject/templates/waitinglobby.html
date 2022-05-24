@@ -1,10 +1,14 @@
 {% extends 'base-layout.html' %}
 
 {%block content%}
-<form method="post" action="/games/" id="chooseplayercount">
+<form method="post" action="/games/" id="lobby-chooseplayercount">
     <input type="number" min="2" max="8" id="number-of-players" name="number-of-players">
     <button type="submit" id="creategamebutton">Create Game</button>
 </form>
+<div id="lobby-howmanyplayers">
+    <p>How many players?</p>
+
+</div>
 
 {%endblock%}
 

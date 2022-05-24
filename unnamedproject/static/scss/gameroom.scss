@@ -10,13 +10,13 @@ body {
 
   main {
 
-    #chooseplayercount {
+    #lobby-chooseplayercount {
 
       text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: scale(2);
+        transform: scale(3);
         padding-top: 5%;
 
 
@@ -26,6 +26,20 @@ body {
         color: midnightblue;
 
       }
+
+    }
+
+    #lobby-howmanyplayers {
+
+      text-align: center;
+        padding-top: 5%;
+        align-items: center;
+        justify-content: center;
+        transform: scale(3);
+        
+
+
+      
 
     }
 
