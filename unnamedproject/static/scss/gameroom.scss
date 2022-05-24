@@ -13,7 +13,7 @@ body {
     #lobby-chooseplayercount {
 
       text-align: center;
-        display: flex;
+        
         align-items: center;
         justify-content: center;
         transform: scale(3);
@@ -29,20 +29,7 @@ body {
 
     }
 
-    #lobby-howmanyplayers {
-
-      text-align: center;
-        padding-top: 5%;
-        align-items: center;
-        justify-content: center;
-        transform: scale(3);
-        
-
-
-      
-
-    }
-
+    
     #gametable {
       display: flex;
       width: 100%;
