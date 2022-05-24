@@ -1,9 +1,9 @@
 {% extends 'base-layout.html' %}
 
 {%block content%}
-<form method="post" action="/games/">
+<form method="post" action="/games/" id="chooseplayercount">
     <input type="number" min="2" max="8" id="number-of-players" name="number-of-players">
-    <button type="submit">Create Game</button>
+    <button type="submit" id="creategamebutton">Create Game</button>
 </form>
 
 {%endblock%}
