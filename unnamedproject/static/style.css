@@ -3,6 +3,15 @@ body {
   margin: 0px; }
   body header {
     background-color: #40c4ff; }
+    body main #lobby-chooseplayercount {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      transform: scale(3);
+      padding-top: 5%; }
+      body main #lobby-chooseplayercount #creategamebutton {
+        background-color: #82f7ff;
+        color: midnightblue; }
     body main #gametable {
       display: flex;
       width: 100%;

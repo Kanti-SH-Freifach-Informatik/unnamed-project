@@ -9,11 +9,33 @@ body {
   }
 
   main {
+
+    #lobby-chooseplayercount {
+
+      text-align: center;
+        
+        align-items: center;
+        justify-content: center;
+        transform: scale(3);
+        padding-top: 5%;
+
+
+      #creategamebutton {
+
+        background-color: $lightcolor;
+        color: midnightblue;
+
+      }
+
+    }
+
+    
     #gametable {
       display: flex;
       width: 100%;
       height: 100%;
 
+    
       #top_card_background_div {
         text-align: center;
         display: flex;
