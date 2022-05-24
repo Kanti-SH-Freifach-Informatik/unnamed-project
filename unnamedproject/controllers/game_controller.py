@@ -33,8 +33,6 @@ def create():
     else : 
         return render_template('waitinglobby.html')
 
-
-
 # POST /:game_id/:played_card
 def update(game_id, played_card):
     game = Game.query.filter_by(id=game_id).first()
@@ -80,3 +78,5 @@ def delete(game_id):
     db.session.delete(game)
     db.session.commit()
     return "game deleted"
+
+
