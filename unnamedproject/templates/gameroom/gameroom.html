@@ -2,7 +2,9 @@
 <div id="gametable">
   <div id="play-area">
     <div id="center-flex-box">
-      <img src="{{ url_for('static', filename='images/cards/' ~ game.get_top_card() ~ ('.svg' if game.get_top_card().value.value < 10 else '.jpg'))}}" width="250">
+      <img
+        src="{{ url_for('static', filename='images/cards/' ~ game.get_top_card() ~ ('.svg' if game.get_top_card().value.value < 10 else '.jpg'))}}"
+        width="250">
     </div>
     <div id="action-bar">
       <div id="card_selection_div">
@@ -10,22 +12,16 @@
         <form class="card-selection-form"
           action="{{ url_for('games.update', game_id=game.id, played_card=loop.index0) }}">
           <button class="card-selection-form-button">
-            <img src="{{ url_for('static', filename='images/cards/' ~ card ~ ('.svg' if card.value.value < 10 else '.jpg') )}}" width="80">
+            <img
+              src="{{ url_for('static', filename='images/cards/' ~ card ~ ('.svg' if card.value.value < 10 else '.jpg') )}}"
+              width="80">
           </button>
         </form>
         {%endfor%}
       </div>
-      <div id="draw-button-frame">
-        <form id="draw-button-form"
-            action="{{ url_for('games.draw', game_id=game.id) }}">
-            <button id="draw-button">
-              <p>Draw</p>
-            </button>
-          </form>
-      </div>
     </div>
   </div>
-  <div id="players-chat-box">
+  <div id="sidebar">
     <p>Spielerliste</p>
     <ul id="player-ranking">
       {%for player in game.game_players%}
@@ -44,18 +40,26 @@
       </li>
       {%endif%}
       {%endfor%}
-      </ol>
-      <div id="space-between-list-and-chat">
-        <div id="chatbox">
-          <form action="{{ url_for('games.create')}}" method="post">
-            <h1>Chat</h1>
-            <label for="msg"><b>Message</b></label>
-            <textarea placeholder="Type message.." name="msg" required></textarea>
-            <button type="submit" class="btn">Send</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-          </form>
-        </div>
+    </ul>
+    <div id="space-between-list-and-chat">
+      <div id="chatbox">
+        <form action="{{ url_for('games.create')}}" method="post">
+          <h1>Chat</h1>
+          <label for="msg"><b>Message</b></label>
+          <textarea placeholder="Type message.." name="msg" required></textarea>
+          <button type="submit" class="btn">Send</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
       </div>
+    </div>
+    <div class="spacer"></div>
+    <div id="draw-button-frame">
+      <form id="draw-button-form" action="{{ url_for('games.draw', game_id=game.id) }}">
+        <button id="draw-button">
+          <p id="draw-button-text">Draw</p>
+        </button>
+      </form>
+    </div>
   </div>
-  {% endblock %} {%block footer%} {% endblock %}
 </div>
+{% endblock %} {%block footer%} {% endblock %}
