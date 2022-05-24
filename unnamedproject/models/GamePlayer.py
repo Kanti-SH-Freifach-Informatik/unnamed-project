@@ -23,4 +23,25 @@ class GamePlayer(db.Model):
         return self.hand
 
     def check_win(self):
-        return len(self.hand) == 0
+        for i in self.hand:
+            if i == "":
+                return True
+
+    def check_ai(self):
+        return self.player.ai
+    
+    def possible_card(self, game):
+        for i in self.hand:
+            if Card.color.value == game.top_card.color.value:
+                return True
+            elif Card.value.value == game.top_card.value.value:
+                return True
+            else:
+                return False
+
+    def ai_play_card(self, game):
+        for i in self.hand:
+            if Card.color.value == game.top_card.color.value:
+                return i
+            elif Card.value.value == game.top_card.value.value:
+                return i

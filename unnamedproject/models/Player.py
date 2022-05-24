@@ -6,3 +6,4 @@ class Player(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     games = db.relationship('GamePlayer', back_populates='player')
+    ai= db.Column(db.Boolean, default=False, nullable = False)
