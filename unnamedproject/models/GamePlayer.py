@@ -32,17 +32,7 @@ class GamePlayer(db.Model):
         
     
     def possible_card(self, game):
-        for i in self.hand:
-            if Card.color.value == game.top_card.color.value:
-                return True
-            elif Card.value.value == game.top_card.value.value:
-                return True
-            else:
-                return False
-
-    def ai_play_card(self, game):
-        for i in self.hand:
-            if Card.color.value == game.top_card.color.value:
+        for i, c in enumerate(self.get_hand()):
+            if c.color == game.get_top_card().color or c.value == game.get_top_card().value:
                 return i
-            elif Card.value.value == game.top_card.value.value:
-                return i
+        return None

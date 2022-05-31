@@ -32,9 +32,9 @@ class Game(db.Model):
         player = self.game_players[self.active_player]
         while player.check_ai():
             print("sucess")
-            if player.possible_card(self):
-                card = player.ai_play_card(self)
-                self.play_card(card)
+            possible_card = player.possible_card(self)
+            if possible_card is not None:
+                self.play_card(possible_card)
             else:
                 self.draw_card()
                 player = self.game_players[self.active_player]
