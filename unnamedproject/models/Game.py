@@ -29,12 +29,15 @@ class Game(db.Model):
                 self.active_player = (self.active_player + 2 ) %len(self.game_players)
             else :
                 self.active_player = (self.active_player + 1 ) %len(self.game_players)
+        player = self.game_players[self.active_player]
         while player.check_ai():
+            print("sucess")
             if player.possible_card(self):
                 card = player.ai_play_card(self)
                 self.play_card(card)
             else:
                 self.draw_card()
+                player = self.game_players[self.active_player]
 
     def draw_card(self):
         player = self.game_players[self.active_player]

@@ -29,6 +29,7 @@ class GamePlayer(db.Model):
 
     def check_ai(self):
         return self.player.ai
+        
     
     def possible_card(self, game):
         for i in self.hand:

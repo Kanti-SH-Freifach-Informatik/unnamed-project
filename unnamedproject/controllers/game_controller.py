@@ -1,4 +1,5 @@
 from flask import render_template, request
+from sqlalchemy.orm import joinedload
 
 from unnamedproject import db
 from unnamedproject.models.Game import Game
@@ -6,6 +7,7 @@ from unnamedproject.models.GamePlayer import GamePlayer
 from unnamedproject.models.Player import Player
 from unnamedproject.models.Card import Card, CardValue
 from unnamedproject.utilities.card_utilities import generate_hand, is_playable
+
 
 # GET /
 def index():
@@ -37,7 +39,7 @@ def create():
 
 # POST /:game_id/:played_card
 def update(game_id, played_card):
-    game = Game.query.filter_by(id=game_id).first()
+    game = Game.query.filter_by(id=game_id).options(joinedload(Game.game_players, GamePlayer.player)).first()
     game.play_card(played_card)
     db.session.commit()
     for gp in game.game_players:
