@@ -18,10 +18,11 @@ def show(game_id):
 # POST /
 def create():
     n = request.form["number-of-players"]
-    if n is not None and n.isdigit() and int(n)>=2 and int(n)<=8 :
+    g = request.form["game-name"]
+    if n  is not None and n.isdigit() and int(n)>=2 and int(n)<=8 and g is not None :
         players = Player.query.limit(int(n)).all()
         top_card = Card()
-        game = Game(active_player= 0, top_card=str(top_card))
+        game = Game(active_player= 0, top_card=str(top_card),name=g)
         for i, p in enumerate(players):
             gp = GamePlayer(order=i)
             gp.set_hand(generate_hand(7))
@@ -32,6 +33,7 @@ def create():
         return render_template("gameroom/gameroom.html", game=game)
     else : 
         return render_template('waitinglobby.html')
+
 
 # POST /:game_id/:played_card
 def update(game_id, played_card):
