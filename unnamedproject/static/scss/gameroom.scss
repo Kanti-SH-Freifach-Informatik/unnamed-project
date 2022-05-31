@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 body {
-  background-color: $basecolor;
+  background-color: $lightcolor;
   margin: 0px;
 
   header {
@@ -51,6 +51,7 @@ body {
 
     }
     
+   
     #gametable {
       display: flex;
       width: 100%;
@@ -90,6 +91,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
+          background-color: $basecolor;
         }
 
         #action-bar {
@@ -172,4 +174,5 @@ body {
       }
     }
   }
+
 }

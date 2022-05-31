@@ -1,5 +1,5 @@
 body {
-  background-color: #40c4ff;
+  background-color: #82f7ff;
   margin: 0px; }
   body header {
     background-color: #40c4ff; }
@@ -50,7 +50,8 @@ body {
           flex-grow: 1;
           display: flex;
           justify-content: center;
-          align-items: center; }
+          align-items: center;
+          background-color: #40c4ff; }
           body main #gametable #play-area #action-bar {
             height: 200px;
             display: flex;
@@ -103,3 +104,5 @@ body {
                         background-color: inherit; }
                         body main #gametable #sidebar #draw-button-frame #draw-button-form #draw-button #draw-button-text {
                           font-size: 20px; }
+  body footer {
+    background-color: #82f7ff; }
