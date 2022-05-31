@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
-   sodipodi:docname="r4.svg"
+   sodipodi:docname="b4.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,13 +27,13 @@
      units="mm"
      inkscape:zoom="0.64750959"
      inkscape:cx="331.26922"
-     inkscape:cy="561.38165"
+     inkscape:cy="560.60946"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showguides="false" />
   <defs
      id="defs2">
@@ -110,7 +110,7 @@
      id="layer1"
      style="display:inline">
     <rect
-       style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.209172"
+       style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.209172"
        id="rect31"
        width="150"
        height="250"
@@ -123,18 +123,20 @@
        style="font-style:normal;font-weight:normal;font-size:2.66667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2865);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="266.98242"
          y="470.02859"
-         id="tspan1967">1</tspan></text>
-    <g
-       aria-label="4"
+         id="tspan49624">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:141.111px;line-height:1.25;font-family:sans-serif;fill:#00000f;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="53.918949"
+       y="197.02551"
        id="text11671"
-       style="font-size:141.111px;line-height:1.25;fill:#00000f;stroke:#ffffff;stroke-width:3"
        inkscape:transform-center-x="1.5963637"
-       inkscape:transform-center-y="2.7936364">
-      <path
-         d="m 128.60856,102.97449 v 94.05102 h -26.45831 v -71.79573 l -11.713319,23.28883 h 5.787755 v 20.46385 H 59.499999 l 27.836348,-66.00797 z"
-         style="font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, '"
-         id="path1828" />
-    </g>
+       inkscape:transform-center-y="2.7936364"><tspan
+         sodipodi:role="line"
+         id="tspan11669"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:141.111px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, ';fill:#00000f;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         x="53.918949"
+         y="197.02551">4</tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -175,7 +177,7 @@
        style="font-size:146.667px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, ';white-space:pre;shape-inside:url(#rect6486)">
       <path
          d="m 133.22804,102.70171 v 97.75413 h -27.50006 v -74.62257 l -12.174506,24.20579 h 6.015639 v 21.26958 H 61.398451 L 90.33081,102.70171 Z"
-         id="path1870" />
+         id="path3411" />
     </g>
     <g
        aria-label="4"
@@ -184,7 +186,7 @@
        style="font-size:146.667px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, ';white-space:pre;shape-inside:url(#rect26911)">
       <path
          d="m 133.22804,102.70171 v 97.75413 h -27.50006 v -74.62257 l -12.174506,24.20579 h 6.015639 v 21.26958 H 61.398451 L 90.33081,102.70171 Z"
-         id="path1849" />
+         id="path3432" />
     </g>
     <g
        aria-label="4"
@@ -193,7 +195,7 @@
        style="font-size:146.667px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, ';white-space:pre;shape-inside:url(#rect26915)">
       <path
          d="m 133.22804,102.70171 v 97.75413 h -27.50006 v -74.62257 l -12.174506,24.20579 h 6.015639 v 21.26958 H 61.398451 L 90.33081,102.70171 Z"
-         id="path1891" />
+         id="path3484" />
     </g>
     <g
        aria-label="4"
@@ -202,7 +204,7 @@
        style="font-size:146.667px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, ';white-space:pre;shape-inside:url(#rect26919)">
       <path
          d="m 133.22804,102.70171 v 97.75413 h -27.50006 v -74.62257 l -12.174506,24.20579 h 6.015639 v 21.26958 H 61.398451 L 90.33081,102.70171 Z"
-         id="path1912" />
+         id="path3463" />
     </g>
   </g>
 </svg>

@@ -44,7 +44,7 @@ class Game(db.Model):
         hand = player.get_hand()
         hand.append(Card())
         player.hand = player.set_hand(hand)
-        self.active_player = (self.active_player + 1) %4
+        self.active_player = (self.active_player + 1) % len(self.game_players)
 
     def get_top_card(self):
         return Card(representation=self.top_card)

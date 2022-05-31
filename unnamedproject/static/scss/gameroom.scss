@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 body {
-  background-color: $basecolor;
+  background-color: $lightcolor;
   margin: 0px;
 
   header {
@@ -9,11 +9,55 @@ body {
   }
 
   main {
+
+    #lobby-chooseplayercount {
+
+      text-align: center;
+        
+        align-items: center;
+        justify-content: center;
+        transform: scale(3);
+        padding-top: 5%;
+        
+      #lobby-hmp {
+
+        text-decoration: none;
+        color: navy;
+
+      }
+
+
+      #creategamebutton {
+
+        background-color: $lightcolor;
+        color: midnightblue;
+
+      }
+
+    }
+    
+    #lobby-ee {
+
+
+      text-align: left;
+      padding-top: 9cm;
+
+      #lobby-eastr {
+
+        text-decoration: none;
+        color: $basecolor;
+
+      }
+
+    }
+    
+   
     #gametable {
       display: flex;
       width: 100%;
       height: 100%;
 
+    
       #top_card_background_div {
         text-align: center;
         display: flex;
@@ -47,6 +91,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
+          background-color: $basecolor;
         }
 
         #action-bar {
@@ -67,33 +112,22 @@ body {
             text-align: center;
             overflow: scroll;
           }
-
-          #draw-button-frame {
-            align-self: right;
-            #draw-button-form {
-              padding: 0px;
-              margin: 0px;
-              #draw-button {
-                padding: 50px;
-                background-color: red;
-                border: none;
-              }
-            }
-          }
         }
       }
 
-      #players-chat-box {
+      #sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background-color: $lightcolor;
         text-align: center;
         width: 250px;
         height: 100%;
         justify-content: right;
-        align-items: right;
 
         #player-ranking {
           padding: 0px;
-          background-color: white;
+          background-color: $lightcolor;
           list-style-type: none;
 
         }
@@ -108,12 +142,37 @@ body {
 
         #chatbox {
 
-          background-color: white;
+          background-color: $lightcolor;
 
+        }
+
+        .spacer {
+          flex-grow: 1;
+        }
+
+        #draw-button-frame {
+          margin-bottom: 30px;
+          background-color: red;
+          border-color: black;
+          border-style: solid;
+          border-width: 1px;
+          border-radius: 50%;
+          #draw-button-form {
+            padding: 75px;
+            margin: 0px;
+            #draw-button {
+              border: none;
+              background-color: inherit;
+              #draw-button-text {
+                font-size: 20px;
+              }
+            }
+          }
         }
 
 
       }
     }
   }
+
 }
