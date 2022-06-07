@@ -29,15 +29,6 @@ class Game(db.Model):
                 self.active_player = (self.active_player + 2 ) %len(self.game_players)
             else :
                 self.active_player = (self.active_player + 1 ) %len(self.game_players)
-        player = self.game_players[self.active_player]
-        while player.check_ai():
-            print("sucess")
-            possible_card = player.possible_card(self)
-            if possible_card is not None:
-                self.play_card(possible_card)
-            else:
-                self.draw_card()
-                player = self.game_players[self.active_player]
 
     def draw_card(self):
         player = self.game_players[self.active_player]
@@ -45,7 +36,29 @@ class Game(db.Model):
         hand.append(Card())
         player.hand = player.set_hand(hand)
         self.active_player = (self.active_player + 1) % len(self.game_players)
+    
+    def handle_ai(self):
+        player = self.game_players[self.active_player]
+        while player.check_ai():
+            possible_card = player.possible_card(self)
+            if possible_card is not None:
+                self.play_card(possible_card)
+                winner = self.get_winner()
+                if winner is not None:
+                    return winner
+                    break
+                player = self.game_players[self.active_player]
+            else:
+                self.draw_card()
+                player = self.game_players[self.active_player]
+
 
     def get_top_card(self):
         return Card(representation=self.top_card)
 
+    def get_winner(self):
+        for gp in self.game_players:
+            if gp.check_win():
+                return gp 
+            else:
+                return None

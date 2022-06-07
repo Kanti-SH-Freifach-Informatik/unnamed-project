@@ -23,9 +23,8 @@ class GamePlayer(db.Model):
         return self.hand
 
     def check_win(self):
-        for i in self.hand:
-            if i == "":
-                return True
+        if self.hand == "":
+            return True
 
     def check_ai(self):
         return self.player.ai

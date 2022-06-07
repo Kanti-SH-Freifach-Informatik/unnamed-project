@@ -41,17 +41,23 @@ def create():
 def update(game_id, played_card):
     game = Game.query.filter_by(id=game_id).options(joinedload(Game.game_players, GamePlayer.player)).first()
     game.play_card(played_card)
-    db.session.commit()
-    for gp in game.game_players:
-        if gp.check_win():
-            return render_template("games/win.html", game=game)
-    else:
-        return render_template("gameroom/gameroom.html", game=game)
+    winner = game.get_winner()
+    if winner is not None:
+        db.session.commit()
+        return render_template("games/win.html", game=game, winner=winner)
+    else:    
+        game.handle_ai()
+        db.session.commit()
+        if winner is not None:
+            return render_template("games/win.html", game=game, winner=winner)
+        else:
+            return render_template("gameroom/gameroom.html", game=game)
 
 # POST /:game_id/draw
 def draw(game_id):
     game = Game.query.filter_by(id=game_id).first()
     game.draw_card()
+    game.handle_ai()
     db.session.commit()
     return render_template("gameroom/gameroom.html", game=game)
 
