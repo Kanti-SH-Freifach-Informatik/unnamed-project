@@ -20,7 +20,7 @@ body {
       padding-top: 9cm; }
       body main #lobby-ee #lobby-eastr {
         text-decoration: none;
-        color: #40c4ff; }
+        color: transparent; }
     body main #gametable {
       display: flex;
       width: 100%;
@@ -104,5 +104,3 @@ body {
                         background-color: inherit; }
                         body main #gametable #sidebar #draw-button-frame #draw-button-form #draw-button #draw-button-text {
                           font-size: 20px; }
-  body footer {
-    background-color: #82f7ff; }
