@@ -51,7 +51,6 @@ body {
 
     }
     
-   
     #gametable {
       display: flex;
       width: 100%;
@@ -171,6 +170,24 @@ body {
         }
 
 
+      }
+    }
+
+    #game-list-div {
+      margin: 50px;
+      #game-list-item {
+        border: 1px solid;
+        border-color: black;
+        padding: 5px 5px 5px 5px;
+        margin: 0px;
+        margin-top: 5px;
+        display: flex;
+        .g-l-i-c {
+          margin: 0;
+        }
+        .spacer {
+          flex-grow: 1;
+        }
       }
     }
   }

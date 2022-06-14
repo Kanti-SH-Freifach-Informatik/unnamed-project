@@ -104,3 +104,16 @@ body {
                         background-color: inherit; }
                         body main #gametable #sidebar #draw-button-frame #draw-button-form #draw-button #draw-button-text {
                           font-size: 20px; }
+    body main #game-list-div {
+      margin: 50px; }
+      body main #game-list-div #game-list-item {
+        border: 1px solid;
+        border-color: black;
+        padding: 5px 5px 5px 5px;
+        margin: 0px;
+        margin-top: 5px;
+        display: flex; }
+        body main #game-list-div #game-list-item .g-l-i-c {
+          margin: 0; }
+          body main #game-list-div #game-list-item .spacer {
+            flex-grow: 1; }
