@@ -15,6 +15,13 @@ body {
         body main #lobby-chooseplayercount #creategamebutton {
           background-color: #82f7ff;
           color: midnightblue; }
+    body main #waiting-room-div {
+      text-align: center; }
+      body main #waiting-room-div #joined-players-list {
+        padding-left: 0;
+        list-style-type: none; }
+        body main #waiting-room-div #joined-players-list li {
+          vertical-align: middle; }
     body main #lobby-ee {
       text-align: left;
       padding-top: 9cm; }

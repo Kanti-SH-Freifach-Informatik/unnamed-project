@@ -2,14 +2,22 @@
 
 {%block content%}
 
-<ul id="player-ranking">
-    {%for player in game.game_players%}
- 
-      <b class="player-ranking-name">{{player.player.name}}</b>
-      <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand()|length}}
-      </p>
-    </li>
-    {%endfor%}
 
+
+<div id="waiting-room-div">
+    <h1>{{game.name}}</h1>
+    <p><b>Anz. Spieler: </b>{{game.game_players|length}}</p>
+    
+    <ul id="joined-players-list">
+        {%for player in game.game_players%}
+        <li><b>{{player.player.name}}</b></li>
+        {%endfor%}
+    </ul>
+    <form id="draw-button-form" action="">
+        <button id="start-game-button">
+          <p id="start-game-button-text">Start Game</p>
+        </button>
+      </form>
+</div>
 {%endblock%}
 
