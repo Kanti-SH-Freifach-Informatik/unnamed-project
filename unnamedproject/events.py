@@ -1,5 +1,5 @@
 from unnamedproject import socketio
-from flask_socketio import send, emit
+from flask_socketio import send, emit, join_room, leave_room
 
 @socketio.on('connect')
 def handle_connect():
@@ -15,4 +15,12 @@ def handle_message(message):
 
 @socketio.on('my event')
 def handle_my_custom_event(json):
-    emit('my response', json)
+    send(json, to="test")
+
+@socketio.on("join")
+def on_join(data):
+    user = data["user"]
+    room = data["room"]
+    print(f"client {user} wants to join: {room}")
+    join_room(room)
+    emit("room_message", f"Welcome to {room}, {user}", room=room)
