@@ -20,3 +20,6 @@ class Game(db.Model):
 
     def get_top_card(self):
         return Card(representation=self.top_card)
+
+    def isNotStarted(self):
+        return self.state == Status.NOT_STARTED
