@@ -32,7 +32,7 @@ def create():
             game.game_players.append(gp)
         db.session.add(game)
         db.session.commit()
-        return render_template("gameroom/gameroom.html", game=game)
+        return render_template("games/waitingroom.html", game=game)
     else : 
         return render_template('home/create-game.html')
 
