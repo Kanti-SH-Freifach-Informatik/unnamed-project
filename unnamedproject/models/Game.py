@@ -10,6 +10,7 @@ class Game(db.Model):
     active_player = db.Column(db.Integer, nullable=False)
     top_card = db.Column(db.String(10), nullable=False)
     game_players = db.relationship("GamePlayer", back_populates="game",order_by="GamePlayer.order")
+    reverse = db.Column(db.Boolean, default=False, nullable=False)
 
     def play_card(self, played_card):
         player = self.game_players[self.active_player]
@@ -21,21 +22,19 @@ class Game(db.Model):
             hand.pop(played_card)
             player.set_hand(hand)
             if card.value == CardValue.REVERSE :
-                for gp in self.game_players:
-                    gp.order = len(self.game_players) - gp.order - 1 
-                self.active_player = len(self.game_players) - self.active_player - 1
+                self.reverse = not self.reverse
             
             if  card.value == CardValue.SKIP :
-                self.active_player = (self.active_player + 2 ) %len(self.game_players)
+                self.active_player = (self.active_player + 2*self.get_multiplier()) %len(self.game_players)
             else :
-                self.active_player = (self.active_player + 1 ) %len(self.game_players)
+                self.active_player = (self.active_player + 1*self.get_multiplier()) %len(self.game_players)
 
     def draw_card(self):
         player = self.game_players[self.active_player]
         hand = player.get_hand()
         hand.append(Card())
         player.hand = player.set_hand(hand)
-        self.active_player = (self.active_player + 1) % len(self.game_players)
+        self.active_player = (self.active_player + 1*self.get_multiplier()) % len(self.game_players)
     
     def handle_ai(self):
         player = self.game_players[self.active_player]
@@ -62,3 +61,6 @@ class Game(db.Model):
                 return gp 
             else:
                 return None
+
+    def get_multiplier(self):
+        return -1 if self.reverse else 1
