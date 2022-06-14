@@ -9,9 +9,7 @@
     <button type="submit" id="creategamebutton">Create Game</button>   
     </form>
 
-    <form method="post" action="/games/"> 
-        <button type="submit" id="joingamebutton">Join Game (WIP)</button>    
-    </form>
+    <a href="{{ url_for('games.index') }}" id="joingamebutton">Join Game (WIP)</a>
 
     <p id="lobby-hmp">How many players?</p>
 </div>

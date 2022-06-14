@@ -9,11 +9,13 @@ from unnamedproject.utilities.card_utilities import generate_hand, is_playable
 
 # GET /
 def index():
-    return 'hello game'
+    games = Game.query.all()
+    return render_template('games/index.html', games=games)
 
 # GET /:game_id
 def show(game_id):
-    return 'hello game number ' + str(game_id)
+    game = Game.query.filter_by(id=game_id).first()
+    return render_template('games/waitingroom.html', game=game)
 
 # POST /
 def create():
@@ -32,7 +34,7 @@ def create():
         db.session.commit()
         return render_template("gameroom/gameroom.html", game=game)
     else : 
-        return render_template('waitinglobby.html')
+        return render_template('home/create-game.html')
 
 
 # POST /:game_id/:played_card
