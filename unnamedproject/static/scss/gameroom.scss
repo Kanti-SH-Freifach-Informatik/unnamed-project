@@ -199,9 +199,12 @@ body {
         display: flex;
         .g-l-i-c {
           margin: 0;
-        }
-        .spacer {
           flex-grow: 1;
+          flex-basis: 0;
+        }
+        .g-l-i-c-b {
+          margin: 0;
+          flex-basis:0;
         }
       }
     }

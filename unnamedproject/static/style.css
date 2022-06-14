@@ -121,6 +121,9 @@ body {
         margin-top: 5px;
         display: flex; }
         body main #game-list-div #game-list-item .g-l-i-c {
-          margin: 0; }
-          body main #game-list-div #game-list-item .spacer {
-            flex-grow: 1; }
+          margin: 0;
+          flex-grow: 1;
+          flex-basis: 0; }
+          body main #game-list-div #game-list-item .g-l-i-c-b {
+            margin: 0;
+            flex-basis: 0; }

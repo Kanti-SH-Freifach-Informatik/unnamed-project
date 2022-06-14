@@ -4,14 +4,14 @@
 <div id="lobby-chooseplayercount">
     <form method="post" action="/games/" >
     <input type="number" min="2" max="8" id="number-of-players" name="number-of-players">
-    <input type="text" id="game-name" name="game-name">
+    <input type="text" id="game-name" name="game-name" maxlength="50">
     
     <button type="submit" id="creategamebutton">Create Game</button>   
     </form>
 
-    <a href="{{ url_for('games.index') }}" id="joingamebutton">Join Game (WIP)</a>
+    <a href="{{ url_for('games.index') }}" id="joingamebutton">Join Game (WIP)</a><br>
 
-    <p id="lobby-hmp">How many players?</p>
+    <a id="lobby-hmp" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">How many players?</a>
 </div>
 
 <div id="lobby-ee">
