@@ -7,10 +7,8 @@
     {%for game in games%}
     <div id="game-list-item">
         <p class="g-l-i-c">{{game.name}}</p>
-        <div class="spacer"></div>
-        <p class="g-l-i-c">{{game.players|length}}/{{game.players|length}} Spieler</p>
-        <div class="spacer"></div>
-        <form class="g-l-i-c" action="{{ url_for('games.show', game_id=game.id)}}">
+        <p class="g-l-i-c">{{game.game_players|length}}/{{game.game_players|length}} Spieler</p>
+        <form class="g-l-i-c-b" action="{{ url_for('games.show', game_id=game.id)}}">
         <button>
             Beitreten
         </button>
