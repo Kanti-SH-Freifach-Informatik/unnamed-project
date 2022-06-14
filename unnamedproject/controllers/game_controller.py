@@ -1,7 +1,7 @@
 from flask import render_template, request
 
 from unnamedproject import db
-from unnamedproject.models.Game import Game
+from unnamedproject.models.Game import Game, Status
 from unnamedproject.models.GamePlayer import GamePlayer
 from unnamedproject.models.Player import Player
 from unnamedproject.models.Card import Card, CardValue
@@ -16,6 +16,14 @@ def index():
 def show(game_id):
     game = Game.query.filter_by(id=game_id).first()
     return render_template('games/waitingroom.html', game=game)
+
+# GET /:game_id
+def start(game_id):
+    game = Game.query.filter_by(id=game_id).first()
+    game.state = Status.STARTED
+    db.session.commit()
+    return render_template("gameroom/gameroom.html", game=game)
+
 
 # POST /
 def create():
