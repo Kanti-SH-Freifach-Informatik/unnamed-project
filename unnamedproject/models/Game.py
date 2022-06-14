@@ -21,5 +21,8 @@ class Game(db.Model):
     def get_top_card(self):
         return Card(representation=self.top_card)
 
-    def isNotStarted(self):
+    def is_not_started(self):
         return self.state == Status.NOT_STARTED
+
+    def finish_game(self):
+        self.state = Status.FINISHED 

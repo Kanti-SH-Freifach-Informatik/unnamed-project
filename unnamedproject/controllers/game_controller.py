@@ -58,7 +58,9 @@ def update(game_id, played_card):
         player.set_hand(hand)
         if  player.check_win():
             active_player = game.active_player
+            game.finish_game()
             db.session.commit()
+
             return render_template("games/win.html", winner=active_player)
         else: 
             if card.value == CardValue.REVERSE :
