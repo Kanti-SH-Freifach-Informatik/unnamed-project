@@ -2,7 +2,14 @@
 
 {%block content%}
 
-<h1>Hier den aktuellen Stand des Spiels anzeigen</h1>
+<ul id="player-ranking">
+    {%for player in game.game_players%}
+ 
+      <b class="player-ranking-name">{{player.player.name}}</b>
+      <p class="player-ranking-name" id="player-ranking-name-cardcount">Anzahl Karten: {{player.get_hand()|length}}
+      </p>
+    </li>
+    {%endfor%}
 
 {%endblock%}
 
