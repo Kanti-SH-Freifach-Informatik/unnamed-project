@@ -2,7 +2,22 @@
 
 {%block content%}
 
-<h1>Hier den aktuellen Stand des Spiels anzeigen</h1>
 
+
+<div id="waiting-room-div">
+    <h1>{{game.name}}</h1>
+    <p><b>Anz. Spieler: </b>{{game.game_players|length}}</p>
+    
+    <ul id="joined-players-list">
+        {%for player in game.game_players%}
+        <li><b>{{player.player.name}}</b></li>
+        {%endfor%}
+    </ul>
+    <form id="draw-button-form" action="">
+        <button id="start-game-button">
+          <p id="start-game-button-text">Start Game</p>
+        </button>
+      </form>
+</div>
 {%endblock%}
 

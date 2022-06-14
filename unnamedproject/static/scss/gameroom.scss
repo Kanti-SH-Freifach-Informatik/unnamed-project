@@ -36,6 +36,21 @@ body {
 
     }
     
+    #waiting-room-div{
+      h1{
+
+      }
+      text-align: center;
+      #joined-players-list{
+        padding-left: 0;
+        list-style-type: none;
+        li{
+          vertical-align: middle;
+        }
+      }
+
+    }
+
     #lobby-ee {
 
 
