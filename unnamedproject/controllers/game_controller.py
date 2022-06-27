@@ -48,6 +48,7 @@ def update(game_id, played_card):
     else:    
         game.handle_ai()
         db.session.commit()
+        winner = game.get_winner()
         if winner is not None:
             return render_template("games/win.html", game=game, winner=winner)
         else:
