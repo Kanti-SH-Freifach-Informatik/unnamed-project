@@ -23,4 +23,15 @@ class GamePlayer(db.Model):
         return self.hand
 
     def check_win(self):
-        return len(self.hand) == 0
+        if self.hand == "":
+            return True
+
+    def check_ai(self):
+        return self.player.ai
+        
+    
+    def possible_card(self, game):
+        for i, c in enumerate(self.get_hand()):
+            if c.color == game.get_top_card().color or c.value == game.get_top_card().value:
+                return i
+        return None
