@@ -4,7 +4,7 @@ from unnamedproject.models.Card import Card, CardValue
 from unnamedproject.utilities.card_utilities import is_playable
 
 
-class Status(Enum):
+class GameState(Enum):
     NOT_STARTED = 0
     STARTED = 1
     FINISHED = 2
@@ -17,8 +17,8 @@ class Game(db.Model):
     active_player = db.Column(db.Integer, nullable=False)
     top_card = db.Column(db.String(10), nullable=False)
     name = db.Column(db.String(100), nullable=False)
-    state = db.Column(db.Enum(Status), nullable=False,
-                      default=Status.NOT_STARTED)
+    state = db.Column(db.Enum(GameState), nullable=False,
+                      default=GameState.NOT_STARTED)
     game_players = db.relationship(
         "GamePlayer", back_populates="game", order_by="GamePlayer.order")
     reverse = db.Column(db.Boolean, default=False, nullable=False)
@@ -70,10 +70,10 @@ class Game(db.Model):
         return Card(representation=self.top_card)
 
     def is_not_started(self):
-        return self.state == Status.NOT_STARTED
+        return self.state == GameState.NOT_STARTED
 
     def finish_game(self):
-        self.state = Status.FINISHED
+        self.state = GameState.FINISHED
 
     def get_winner(self):
         for gp in self.game_players:
@@ -84,3 +84,12 @@ class Game(db.Model):
 
     def get_multiplier(self):
         return -1 if self.reverse else 1
+
+    def get_game_player_by_token(self, token):
+        for gp in self.game_players:
+            if gp.player.token == token:
+                return gp
+        return None
+
+    def get_active_game_player(self):
+        return self.game_players[self.active_player]

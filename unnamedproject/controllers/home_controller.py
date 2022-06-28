@@ -16,6 +16,11 @@ def index():
         return resp
 
     if 'token' in request.cookies:
-        return render_template('home/create-game.html')
+        current_player = Player.query.filter_by(
+            token=request.cookies.get('token')).first()
+        if current_player is not None:
+            return render_template('home/create-game.html')
         
-    return render_template('home/create-player.html')
+    resp = make_response(render_template('home/create-player.html'))
+    resp.delete_cookie('token')
+    return resp
