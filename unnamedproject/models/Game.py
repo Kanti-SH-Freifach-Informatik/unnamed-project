@@ -60,7 +60,6 @@ class Game(db.Model):
                 winner = self.get_winner()
                 if winner is not None:
                     return winner
-                    break
                 player = self.game_players[self.active_player]
             else:
                 self.draw_card()
@@ -79,8 +78,7 @@ class Game(db.Model):
         for gp in self.game_players:
             if gp.check_win():
                 return gp
-            else:
-                return None
+        return None
 
     def get_multiplier(self):
         return -1 if self.reverse else 1
