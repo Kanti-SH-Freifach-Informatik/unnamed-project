@@ -4,8 +4,21 @@ body {
   background-color: $lightcolor;
   margin: 0px;
 
-  header {
-    background-color: $basecolor;
+  header {   
+    font-size: 70;     
+    text-align: center;
+    letter-spacing: -1px;
+    border-bottom: 2px solid midnightblue;
+    color: midnightblue;
+    font-weight:bold;
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic
+    
+    
+    
+    
+
+    
   }
 
   main {
