@@ -11,11 +11,11 @@ def index():
         db.session.add(player)
         db.session.commit()
 
-        resp = make_response(render_template('waitinglobby.html'))
+        resp = make_response(render_template('home/create-game.html'))
         resp.set_cookie('token', player.token)
         return resp
 
     if 'token' in request.cookies:
-        return render_template('waitinglobby.html')
+        return render_template('home/create-game.html')
         
     return render_template('home/create-player.html')

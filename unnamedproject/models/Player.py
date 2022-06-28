@@ -21,3 +21,4 @@ class Player(db.Model):
     name = db.Column(db.String(100), nullable=False)
     token = db.Column(db.String(30), default=generate_token)
     games = db.relationship('GamePlayer', back_populates='player')
+    ai= db.Column(db.Boolean, default=False, nullable = False)

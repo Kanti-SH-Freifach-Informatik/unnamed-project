@@ -15,12 +15,19 @@ body {
         body main #lobby-chooseplayercount #creategamebutton {
           background-color: #82f7ff;
           color: midnightblue; }
+    body main #waiting-room-div {
+      text-align: center; }
+      body main #waiting-room-div #joined-players-list {
+        padding-left: 0;
+        list-style-type: none; }
+        body main #waiting-room-div #joined-players-list li {
+          vertical-align: middle; }
     body main #lobby-ee {
       text-align: left;
       padding-top: 9cm; }
       body main #lobby-ee #lobby-eastr {
         text-decoration: none;
-        color: #40c4ff; }
+        color: transparent; }
     body main #gametable {
       display: flex;
       width: 100%;
@@ -104,3 +111,19 @@ body {
                         background-color: inherit; }
                         body main #gametable #sidebar #draw-button-frame #draw-button-form #draw-button #draw-button-text {
                           font-size: 20px; }
+    body main #game-list-div {
+      margin: 50px; }
+      body main #game-list-div #game-list-item {
+        border: 1px solid;
+        border-color: black;
+        padding: 5px 5px 5px 5px;
+        margin: 0px;
+        margin-top: 5px;
+        display: flex; }
+        body main #game-list-div #game-list-item .g-l-i-c {
+          margin: 0;
+          flex-grow: 1;
+          flex-basis: 0; }
+          body main #game-list-div #game-list-item .g-l-i-c-b {
+            margin: 0;
+            flex-basis: 0; }

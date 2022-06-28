@@ -36,6 +36,18 @@ body {
 
     }
     
+    #waiting-room-div{
+      text-align: center;
+      #joined-players-list{
+        padding-left: 0;
+        list-style-type: none;
+        li{
+          vertical-align: middle;
+        }
+      }
+
+    }
+
     #lobby-ee {
 
 
@@ -45,13 +57,12 @@ body {
       #lobby-eastr {
 
         text-decoration: none;
-        color: $basecolor;
+        color: transparent;
 
       }
 
     }
     
-   
     #gametable {
       display: flex;
       width: 100%;
@@ -171,6 +182,27 @@ body {
         }
 
 
+      }
+    }
+
+    #game-list-div {
+      margin: 50px;
+      #game-list-item {
+        border: 1px solid;
+        border-color: black;
+        padding: 5px 5px 5px 5px;
+        margin: 0px;
+        margin-top: 5px;
+        display: flex;
+        .g-l-i-c {
+          margin: 0;
+          flex-grow: 1;
+          flex-basis: 0;
+        }
+        .g-l-i-c-b {
+          margin: 0;
+          flex-basis:0;
+        }
       }
     }
   }

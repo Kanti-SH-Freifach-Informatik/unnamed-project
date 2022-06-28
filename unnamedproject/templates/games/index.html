@@ -1,0 +1,23 @@
+{% extends 'base-layout.html' %}
+
+{%block content%}
+<!--Spielname: 5/7 Spieler       [Beitreten]-->
+<div id="game-list-div">
+    <h1>Liste aller aktiven Spiele</h1>
+    {%for game in games%}
+        {%if game.isNotStarted()%}
+        <div id="game-list-item">
+            <p class="g-l-i-c">{{game.name}}</p>
+            <p class="g-l-i-c">{{game.game_players|length}}/{{game.game_players|length}} Spieler</p>
+            <form class="g-l-i-c-b" action="{{ url_for('games.show', game_id=game.id)}}">
+            <button>
+                Beitreten
+            </button>
+        </form>
+        </div>
+        {%endif%}
+    {%endfor%}
+</div>
+
+{%endblock%}
+
