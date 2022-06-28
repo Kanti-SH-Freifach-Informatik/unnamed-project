@@ -24,5 +24,8 @@
             // socket.emit('my event', {data: 'I\'m connected!'});
             socket.emit("join", { "user": Date.now(), "room": "Notifications" });
         });
+        socket.on('room_message', function(data) {
+            console.log(data);
+        });
     </script>
 </body>
