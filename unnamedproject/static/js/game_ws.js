@@ -35,3 +35,13 @@ function draw_card(game_id, token) {
         game_id: game_id,
     });
 }
+
+function chat(game_id, token) {
+    var message = document.getElementById('chattextbox').value;
+    if(message){
+    game_socket.emit("chat", {
+        token: token,
+        game_id: game_id,
+        message: message
+    });
+}}
