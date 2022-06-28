@@ -6,6 +6,7 @@ from sqlalchemy.orm import joinedload
 from unnamedproject.models.Game import Game, GameState
 from unnamedproject.models.GamePlayer import GamePlayer
 from unnamedproject.models.Player import Player
+from unnamedproject.models.Message import Message
 from unnamedproject.utilities.card_utilities import generate_hand
 
 
@@ -97,6 +98,22 @@ def on_draw_card(data):
     winner = game.get_winner()
     if winner is not None:
         game.finish_game()
+    db.session.commit()
+    for gp in game.game_players:
+        if gp.player.token is not None and gp.player.token != '':
+            emit("update", get_template(game, gp.player),
+                 room=f"{gp.player.token}-{game.id}")
+
+@socketio.on("chat")
+def chat(data):
+    game, current_player = get_game_and_current_player(
+        data["game_id"], data["token"])
+    message = data["message"]
+    if message is None:
+        return
+    m = Message(message= message)
+    m.player = current_player
+    game.messages.append(m)
     db.session.commit()
     for gp in game.game_players:
         if gp.player.token is not None and gp.player.token != '':

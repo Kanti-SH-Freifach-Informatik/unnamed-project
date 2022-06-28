@@ -21,6 +21,8 @@ class Game(db.Model):
                       default=GameState.NOT_STARTED)
     game_players = db.relationship(
         "GamePlayer", back_populates="game", order_by="GamePlayer.order")
+    messages = db.relationship(
+        "Message", back_populates="game", order_by="Message.datetime")
     reverse = db.Column(db.Boolean, default=False, nullable=False)
     n_players = db.Column(db.Integer, nullable=False, default=4)
 
@@ -60,7 +62,6 @@ class Game(db.Model):
                 winner = self.get_winner()
                 if winner is not None:
                     return winner
-                    break
                 player = self.game_players[self.active_player]
             else:
                 self.draw_card()
@@ -79,8 +80,7 @@ class Game(db.Model):
         for gp in self.game_players:
             if gp.check_win():
                 return gp
-            else:
-                return None
+        return None
 
     def get_multiplier(self):
         return -1 if self.reverse else 1

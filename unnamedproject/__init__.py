@@ -33,6 +33,6 @@ assets.register('game_js', game_js)
 if __name__ == "__main__":
     socketio.run(app)
 
-from unnamedproject.models import Game, GamePlayer, Player
+from unnamedproject.models import Game, GamePlayer, Player, Message
 import unnamedproject.events
 import unnamedproject.views
