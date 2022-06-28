@@ -1,0 +1,11 @@
+{% extends 'base-layout.html' %}
+
+{%block content%}
+<div>
+    <form method="post" action="{{ url_for('home.index')}}" >
+    <input type="text" id="player-name" name="player-name" required>
+    <button type="submit">Create Player</button>
+    </form>
+</div>
+
+{%endblock%}
