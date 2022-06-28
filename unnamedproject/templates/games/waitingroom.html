@@ -6,7 +6,7 @@
 
 <div id="waiting-room-div">
     <h1>{{game.name}}</h1>
-    <p><b>Anz. Spieler: </b>{{game.game_players|length}}</p>
+    <p><b>Anz. Spieler: </b>{{game.game_players|length}}/{{game.n_players}}</p>
     
     <ul id="joined-players-list">
         {%for player in game.game_players%}

@@ -5,11 +5,11 @@
 <div id="game-list-div">
     <h1>Liste aller aktiven Spiele</h1>
     {%for game in games%}
-        {%if game.isNotStarted()%}
+        {%if game.is_not_started()%}
         <div id="game-list-item">
             <p class="g-l-i-c">{{game.name}}</p>
-            <p class="g-l-i-c">{{game.game_players|length}}/{{game.game_players|length}} Spieler</p>
-            <form class="g-l-i-c-b" action="{{ url_for('games.show', game_id=game.id)}}">
+            <p class="g-l-i-c">{{game.game_players|length}}/{{game.n_players}} Spieler</p>
+            <form class="g-l-i-c-b" action="{{ url_for('games.join', game_id=game.id)}}">
             <button>
                 Beitreten
             </button>

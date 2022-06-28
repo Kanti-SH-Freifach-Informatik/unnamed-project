@@ -16,16 +16,4 @@
     <footer>
         {%block footer%}{%endblock%}
     </footer>
-
-    <script type="text/javascript" charset="utf-8">
-        var socket = io();
-        //var socket = io(window.location, {auth: {token: '123'}});
-        socket.on('connect', function() {
-            // socket.emit('my event', {data: 'I\'m connected!'});
-            socket.emit("join", { "user": Date.now(), "room": "Notifications" });
-        });
-        socket.on('room_message', function(data) {
-            console.log(data);
-        });
-    </script>
 </body>

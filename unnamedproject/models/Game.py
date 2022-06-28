@@ -3,9 +3,10 @@ from unnamedproject import db
 from unnamedproject.models.Card import Card, CardValue
 from unnamedproject.utilities.card_utilities import is_playable
 
+
 class Status(Enum):
     NOT_STARTED = 0
-    STARTED= 1
+    STARTED = 1
     FINISHED = 2
 
 
@@ -16,34 +17,40 @@ class Game(db.Model):
     active_player = db.Column(db.Integer, nullable=False)
     top_card = db.Column(db.String(10), nullable=False)
     name = db.Column(db.String(100), nullable=False)
-    state = db.Column(db.Enum(Status), nullable = False, default = Status.NOT_STARTED)
-    game_players = db.relationship("GamePlayer", back_populates="game", order_by="GamePlayer.order")
+    state = db.Column(db.Enum(Status), nullable=False,
+                      default=Status.NOT_STARTED)
+    game_players = db.relationship(
+        "GamePlayer", back_populates="game", order_by="GamePlayer.order")
     reverse = db.Column(db.Boolean, default=False, nullable=False)
+    n_players = db.Column(db.Integer, nullable=False, default=4)
 
     def play_card(self, played_card):
         player = self.game_players[self.active_player]
         hand = player.get_hand()
         top_card = self.get_top_card()
-        if len(hand) > played_card and is_playable (top_card, hand[played_card]):
+        if len(hand) > played_card and is_playable(top_card, hand[played_card]):
             card = hand[played_card]
             self.top_card = str(card)
             hand.pop(played_card)
             player.set_hand(hand)
-            if card.value == CardValue.REVERSE :
+            if card.value == CardValue.REVERSE:
                 self.reverse = not self.reverse
-            
-            if  card.value == CardValue.SKIP :
-                self.active_player = (self.active_player + 2*self.get_multiplier()) %len(self.game_players)
-            else :
-                self.active_player = (self.active_player + 1*self.get_multiplier()) %len(self.game_players)
+
+            if card.value == CardValue.SKIP:
+                self.active_player = (
+                    self.active_player + 2*self.get_multiplier()) % len(self.game_players)
+            else:
+                self.active_player = (
+                    self.active_player + 1*self.get_multiplier()) % len(self.game_players)
 
     def draw_card(self):
         player = self.game_players[self.active_player]
         hand = player.get_hand()
         hand.append(Card())
         player.hand = player.set_hand(hand)
-        self.active_player = (self.active_player + 1*self.get_multiplier()) % len(self.game_players)
-    
+        self.active_player = (self.active_player + 1 *
+                              self.get_multiplier()) % len(self.game_players)
+
     def handle_ai(self):
         player = self.game_players[self.active_player]
         while player.check_ai():
@@ -59,8 +66,6 @@ class Game(db.Model):
                 self.draw_card()
                 player = self.game_players[self.active_player]
 
-
-
     def get_top_card(self):
         return Card(representation=self.top_card)
 
@@ -69,11 +74,11 @@ class Game(db.Model):
 
     def finish_game(self):
         self.state = Status.FINISHED
-        
+
     def get_winner(self):
         for gp in self.game_players:
             if gp.check_win():
-                return gp 
+                return gp
             else:
                 return None
 
