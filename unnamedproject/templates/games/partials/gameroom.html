@@ -1,0 +1,85 @@
+<div id="gametable">
+    <div id="play-area">
+        <div id="center-flex-box">
+            <img
+                src="{{ url_for('static', filename='images/cards/' ~ game.get_top_card() ~ '.svg')}}"
+                width="250"
+            />
+        </div>
+        <div id="action-bar">
+            <div id="card_selection_div">
+                {%for card in game.get_game_player_by_token(current_player.token).get_hand()%}
+                <button
+                    class="card-selection-form-button"
+                    onclick="play_card('{{game.id}}', '{{current_player.token}}', '{{ loop.index0 }}')"
+                >
+                    <img
+                        src="{{ url_for('static', filename='images/cards/' ~ card ~ '.svg')}}"
+                        width="80"
+                    />
+                </button>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+    <div id="sidebar">
+        <p>Spielerliste</p>
+        <ul id="player-ranking">
+            {%for player in game.game_players%} {%if
+            game.active_player==loop.index0%}
+            <li>
+                <b class="player-ranking-name"
+                    >>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {{player.player.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</b
+                >
+                <p
+                    class="player-ranking-name"
+                    id="player-ranking-name-cardcount"
+                >
+                    Anzahl Karten: {{player.get_hand()|length}}
+                </p>
+            </li>
+            {%else%}
+            <li>
+                <b class="player-ranking-name">{{player.player.name}}</b>
+                <p
+                    class="player-ranking-name"
+                    id="player-ranking-name-cardcount"
+                >
+                    Anzahl Karten: {{player.get_hand()|length}}
+                </p>
+            </li>
+            {%endif%} {%endfor%}
+        </ul>
+        <div id="space-between-list-and-chat">
+            <div id="chatbox">
+                <form action="{{ url_for('games.create')}}" method="post">
+                    <h1>𓆟</h1>
+                    <label for="msg"><b>Message</b></label>
+                    <textarea
+                        placeholder="Type message.."
+                        name="msg"
+                        required
+                    ></textarea>
+                    <button type="submit" class="btn">Send</button>
+                    <button
+                        type="button"
+                        class="btn cancel"
+                        onclick="closeForm()"
+                    >
+                        Close
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div id="draw-button-frame">
+            <button
+                id="draw-button"
+                onclick="draw_card('{{game.id}}', '{{current_player.token}}');"
+            >
+                <p id="draw-button-text">Draw</p>
+            </button>
+        </div>
+    </div>
+</div>

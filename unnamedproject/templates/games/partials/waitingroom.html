@@ -1,0 +1,16 @@
+<div id="waiting-room-div">
+    <h1>{{game.name}}</h1>
+    <p><b>Anz. Spieler: </b>{{game.game_players|length}}/{{game.n_players}}</p>
+
+    <ul id="joined-players-list">
+        {%for player in game.game_players%}
+        <li><b>{{player.player.name}}</b></li>
+        {%endfor%}
+    </ul>
+    <button
+        id="start-game-button"
+        onclick="start_game('{{game.id}}', '{{current_player.token}}');"
+    >
+        <p id="start-game-button-text">Start Game</p>
+    </button>
+</div>

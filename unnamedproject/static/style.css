@@ -15,12 +15,19 @@ body {
         body main #lobby-chooseplayercount #creategamebutton {
           background-color: #82f7ff;
           color: midnightblue; }
+    body main #waiting-room-div {
+      text-align: center; }
+      body main #waiting-room-div #joined-players-list {
+        padding-left: 0;
+        list-style-type: none; }
+        body main #waiting-room-div #joined-players-list li {
+          vertical-align: middle; }
     body main #lobby-ee {
       text-align: left;
       padding-top: 9cm; }
       body main #lobby-ee #lobby-eastr {
         text-decoration: none;
-        color: #40c4ff; }
+        color: transparent; }
     body main #gametable {
       display: flex;
       width: 100%;
@@ -33,41 +40,39 @@ body {
         width: 200px;
         height: 300px;
         font-size: 128px; }
-        body main #gametable .card-selection-form {
-          display: inline-block; }
-          body main #gametable .card-selection-form .card-selection-form-button {
-            border: none;
-            outline: none;
-            background-color: transparent;
-            box-shadow: none; }
-      body main #gametable #play-area {
-        display: flex;
-        height: 100%;
-        flex-grow: 1;
-        flex-direction: column; }
-        body main #gametable #play-area #center-flex-box {
-          width: 100%;
-          flex-grow: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #40c4ff; }
-          body main #gametable #play-area #action-bar {
-            height: 200px;
+        body main #gametable .card-selection-form-button {
+          border: none;
+          outline: none;
+          background-color: transparent;
+          box-shadow: none; }
+          body main #gametable #play-area {
             display: flex;
-            justify-content: center;
-            width: 100%;
-            align-items: center;
-            background-color: #82f7ff;
-            padding-top: 25px;
-            padding-bottom: 25px; }
-            body main #gametable #play-area #action-bar #card_selection_div {
-              font-size: larger;
-              width: 1000px;
-              height: 100%;
-              background-color: #82f7ff;
-              text-align: center;
-              overflow: scroll; }
+            height: 100%;
+            flex-grow: 1;
+            flex-direction: column; }
+            body main #gametable #play-area #center-flex-box {
+              width: 100%;
+              flex-grow: 1;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #40c4ff; }
+              body main #gametable #play-area #action-bar {
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                align-items: center;
+                background-color: #82f7ff;
+                padding-top: 25px;
+                padding-bottom: 25px; }
+                body main #gametable #play-area #action-bar #card_selection_div {
+                  font-size: larger;
+                  width: 1000px;
+                  height: 100%;
+                  background-color: #82f7ff;
+                  text-align: center;
+                  overflow: scroll; }
       body main #gametable #sidebar {
         display: flex;
         flex-direction: column;
@@ -95,12 +100,26 @@ body {
                     border-color: black;
                     border-style: solid;
                     border-width: 1px;
-                    border-radius: 50%; }
-                    body main #gametable #sidebar #draw-button-frame #draw-button-form {
-                      padding: 75px;
-                      margin: 0px; }
-                      body main #gametable #sidebar #draw-button-frame #draw-button-form #draw-button {
-                        border: none;
-                        background-color: inherit; }
-                        body main #gametable #sidebar #draw-button-frame #draw-button-form #draw-button #draw-button-text {
-                          font-size: 20px; }
+                    border-radius: 50%;
+                    padding: 75px; }
+                    body main #gametable #sidebar #draw-button-frame #draw-button {
+                      border: none;
+                      background-color: inherit; }
+                      body main #gametable #sidebar #draw-button-frame #draw-button #draw-button-text {
+                        font-size: 20px; }
+    body main #game-list-div {
+      margin: 50px; }
+      body main #game-list-div #game-list-item {
+        border: 1px solid;
+        border-color: black;
+        padding: 5px 5px 5px 5px;
+        margin: 0px;
+        margin-top: 5px;
+        display: flex; }
+        body main #game-list-div #game-list-item .g-l-i-c {
+          margin: 0;
+          flex-grow: 1;
+          flex-basis: 0; }
+          body main #game-list-div #game-list-item .g-l-i-c-b {
+            margin: 0;
+            flex-basis: 0; }

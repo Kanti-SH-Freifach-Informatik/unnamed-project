@@ -9,55 +9,51 @@ body {
   }
 
   main {
-
     #lobby-chooseplayercount {
-
       text-align: center;
-        
-        align-items: center;
-        justify-content: center;
-        transform: scale(3);
-        padding-top: 5%;
-        
-      #lobby-hmp {
 
+      align-items: center;
+      justify-content: center;
+      transform: scale(3);
+      padding-top: 5%;
+
+      #lobby-hmp {
         text-decoration: none;
         color: navy;
-
       }
-
 
       #creategamebutton {
-
         background-color: $lightcolor;
         color: midnightblue;
-
       }
-
     }
-    
+
+    #waiting-room-div {
+      text-align: center;
+      #joined-players-list {
+        padding-left: 0;
+        list-style-type: none;
+        li {
+          vertical-align: middle;
+        }
+      }
+    }
+
     #lobby-ee {
-
-
       text-align: left;
       padding-top: 9cm;
 
       #lobby-eastr {
-
         text-decoration: none;
-        color: $basecolor;
-
+        color: transparent;
       }
-
     }
-    
-   
+
     #gametable {
       display: flex;
       width: 100%;
       height: 100%;
 
-    
       #top_card_background_div {
         text-align: center;
         display: flex;
@@ -68,15 +64,11 @@ body {
         font-size: 128px;
       }
 
-      .card-selection-form {
-        display: inline-block;
-
-        .card-selection-form-button {
-          border: none;
-          outline: none;
-          background-color: transparent;
-          box-shadow: none;
-        }
+      .card-selection-form-button {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        box-shadow: none;
       }
 
       #play-area {
@@ -129,7 +121,6 @@ body {
           padding: 0px;
           background-color: $lightcolor;
           list-style-type: none;
-
         }
 
         .player-ranking-name {
@@ -141,9 +132,7 @@ body {
         }
 
         #chatbox {
-
           background-color: $lightcolor;
-
         }
 
         .spacer {
@@ -157,22 +146,37 @@ body {
           border-style: solid;
           border-width: 1px;
           border-radius: 50%;
-          #draw-button-form {
-            padding: 75px;
-            margin: 0px;
-            #draw-button {
-              border: none;
-              background-color: inherit;
-              #draw-button-text {
-                font-size: 20px;
-              }
+          padding: 75px;
+          #draw-button {
+            border: none;
+            background-color: inherit;
+            #draw-button-text {
+              font-size: 20px;
             }
           }
         }
+      }
+    }
 
-
+    #game-list-div {
+      margin: 50px;
+      #game-list-item {
+        border: 1px solid;
+        border-color: black;
+        padding: 5px 5px 5px 5px;
+        margin: 0px;
+        margin-top: 5px;
+        display: flex;
+        .g-l-i-c {
+          margin: 0;
+          flex-grow: 1;
+          flex-basis: 0;
+        }
+        .g-l-i-c-b {
+          margin: 0;
+          flex-basis: 0;
+        }
       }
     }
   }
-
 }

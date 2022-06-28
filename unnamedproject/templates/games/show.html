@@ -1,0 +1,7 @@
+{% extends 'base-layout.html' %} {%block content%}
+<div id="game-wrapper"></div>
+
+<script type="text/javascript" charset="utf-8">
+    connect_game("{{game.id}}", "{{current_player.token}}");
+</script>
+{%endblock%}

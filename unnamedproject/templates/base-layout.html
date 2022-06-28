@@ -3,6 +3,11 @@
     <!-- this is how you include css -->
     <link rel="stylesheet" href="{{ ASSET_URL }}" />
     {%endassets%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+    {% assets "game_js" %}
+    <!-- this is how you include js -->
+    <script src="{{ ASSET_URL }}"></script>
+    {%endassets%}
     <title>{{ name }}</title>
 </head>
 <body>
