@@ -22,7 +22,7 @@ class Game(db.Model):
     game_players = db.relationship(
         "GamePlayer", back_populates="game", order_by="GamePlayer.order")
     messages = db.relationship(
-        "message", back_populates="game", order_by="Message.datetime")
+        "Message", back_populates="game", order_by="Message.datetime")
     reverse = db.Column(db.Boolean, default=False, nullable=False)
     n_players = db.Column(db.Integer, nullable=False, default=4)
 
