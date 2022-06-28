@@ -3,6 +3,7 @@
     <!-- this is how you include css -->
     <link rel="stylesheet" href="{{ ASSET_URL }}" />
     {%endassets%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
     <title>{{ name }}</title>
 </head>
 <body>
@@ -15,4 +16,16 @@
     <footer>
         {%block footer%}{%endblock%}
     </footer>
+
+    <script type="text/javascript" charset="utf-8">
+        var socket = io();
+        //var socket = io(window.location, {auth: {token: '123'}});
+        socket.on('connect', function() {
+            // socket.emit('my event', {data: 'I\'m connected!'});
+            socket.emit("join", { "user": Date.now(), "room": "Notifications" });
+        });
+        socket.on('room_message', function(data) {
+            console.log(data);
+        });
+    </script>
 </body>
