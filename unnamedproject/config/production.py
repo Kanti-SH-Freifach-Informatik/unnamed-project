@@ -3,6 +3,8 @@ import os
 # Enable debug mode.
 DEBUG = False
 
+SECRET_KEY = os.environ['SECRET_KEY']
+
 # Connect to the database
 SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{dbuser}:{dbpass}@{dbhost}/{dbname}'.format(
     dbuser=os.environ['DBUSER'],
