@@ -13,5 +13,8 @@ class Message(db.Model):
     player = db.relationship("Player")
     game = db.relationship("Game", back_populates="messages", cascade="all, delete")
 
+    def get_datetime(self):
+        return self.datetime.strftime("%H:%M")
+
     
         

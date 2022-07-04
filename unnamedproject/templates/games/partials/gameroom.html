@@ -8,7 +8,8 @@
         </div>
         <div id="action-bar">
             <div id="card_selection_div">
-                {%for card in game.get_game_player_by_token(current_player.token).get_hand()%}
+                {%for card in
+                game.get_game_player_by_token(current_player.token).get_hand()%}
                 <button
                     class="card-selection-form-button"
                     onclick="play_card('{{game.id}}', '{{current_player.token}}', '{{ loop.index0 }}')"
@@ -19,6 +20,14 @@
                     />
                 </button>
                 {%endfor%}
+            </div>
+            <div id="draw-button-frame">
+                <button
+                    id="draw-button"
+                    onclick="draw_card('{{game.id}}', '{{current_player.token}}');"
+                >
+                    <p id="draw-button-text">Draw</p>
+                </button>
             </div>
         </div>
     </div>
@@ -51,28 +60,30 @@
             </li>
             {%endif%} {%endfor%}
         </ul>
-        <div id="space-between-list-and-chat">
-            <div id="chatbox">
-                <form onsubmit = "chat('{{game.id}}', '{{current_player.token}}');return false">
-                    <h1>𓆟</h1>
-                    <label for="msg"><b>Message</b></label>
-                    <textarea id="chattextbox"
-                        placeholder="Type message.."
-                        name="msg"
-                        required
-                    ></textarea>
-                    <button type="submit" class="btn">Send</button>
-                </form>
+        <div id="chat-messages">
+            {%for message in game.messages%}
+            <div class="single-chat-message">
+                <div class="chat-meta-info">
+                    <div>{{ message.player.name }}</div>
+                    <div>{{ message.get_datetime() }}</div>
+                </div>
+                <div class="chat-message-text">{{ message.message }}</div>
             </div>
+            {%endfor%}
         </div>
-        <div class="spacer"></div>
-        <div id="draw-button-frame">
-            <button
-                id="draw-button"
-                onclick="draw_card('{{game.id}}', '{{current_player.token}}');"
+        <div id="chatbox">
+            <form
+                onsubmit="chat('{{game.id}}', '{{current_player.token}}');return false"
             >
-                <p id="draw-button-text">Draw</p>
-            </button>
+                <h1>𓆟</h1>
+                <textarea
+                    id="chattextbox"
+                    placeholder="Type message.."
+                    name="msg"
+                    required
+                ></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
         </div>
     </div>
 </div>
