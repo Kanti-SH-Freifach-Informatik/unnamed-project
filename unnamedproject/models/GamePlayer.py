@@ -1,4 +1,4 @@
-from unnamedproject import db
+from app import db
 from unnamedproject.models.Card import Card
 from unnamedproject.utilities.card_utilities import parse_hand_str, stringify_hand
 

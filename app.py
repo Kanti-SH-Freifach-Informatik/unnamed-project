@@ -5,7 +5,9 @@ from flask_assets import Environment, Bundle
 from flask_socketio import SocketIO
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, 
+    template_folder='./unnamedproject/templates', 
+    static_folder='./unnamedproject/static')
 sqlite = not 'DBHOST' in os.environ
 if not 'WEBSITE_HOSTNAME' in os.environ:
     app.config.from_object('unnamedproject.config.development')

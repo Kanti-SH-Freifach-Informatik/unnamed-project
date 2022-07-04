@@ -1,4 +1,4 @@
-from unnamedproject import app
+from app import app
 from unnamedproject.routes.home_routes import home_bp
 from unnamedproject.routes.game_routes import game_bp
 

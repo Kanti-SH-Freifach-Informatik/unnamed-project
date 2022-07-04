@@ -1,7 +1,7 @@
 import random
 import string
 
-from unnamedproject import db
+from app import db
 
 def generate_token():
     def get_random_string():

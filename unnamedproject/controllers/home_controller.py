@@ -1,6 +1,6 @@
 from flask import render_template, request, make_response
 
-from unnamedproject import db
+from app import db
 from unnamedproject.models.Player import Player
 
 # GET or POST /

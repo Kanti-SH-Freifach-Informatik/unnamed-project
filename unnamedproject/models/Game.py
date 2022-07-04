@@ -1,5 +1,5 @@
 from enum import Enum
-from unnamedproject import db
+from app import db
 from unnamedproject.models.Card import Card, CardValue
 from unnamedproject.utilities.card_utilities import is_playable
 

@@ -1,7 +1,7 @@
 from flask import render_template, request
 from sqlalchemy.orm import joinedload
 
-from unnamedproject import db
+from app import db
 from unnamedproject.decorators.auth import current_player_required
 from unnamedproject.models.Game import Game, GameState
 from unnamedproject.models.GamePlayer import GamePlayer

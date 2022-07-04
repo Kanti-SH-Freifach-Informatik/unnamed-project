@@ -1,5 +1,5 @@
 from datetime import datetime
-from unnamedproject import db
+from app import db
 from unnamedproject.models.Game import Game
 
 

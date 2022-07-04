@@ -1,4 +1,4 @@
-from unnamedproject import socketio, db
+from app import socketio, db
 from flask import render_template
 from flask_socketio import send, emit, join_room
 from sqlalchemy.orm import joinedload
