@@ -3,8 +3,8 @@
 {%block content%}
 <div id="lobby-chooseplayercount">
     <form method="post" action="/games/" >
-    <input type="number" min="2" max="8" id="number-of-players" name="number-of-players">
-    <input type="text" id="game-name" name="game-name" maxlength="50">
+    <input type="number" min="2" max="8" id="number-of-players" name="number-of-players" placeholder="Anzahl Spieler">
+    <input type="text" id="game-name" name="game-name" maxlength="50" placeholder="Spielbezeichnung">
     
     <button type="submit" id="creategamebutton">Create Game</button>   
     </form>
