@@ -3,23 +3,26 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_assets import Environment, Bundle
 from flask_socketio import SocketIO
+import os
 
 app = Flask(__name__)
-app.config.from_object('unnamedproject.config')
+sqlite = not 'DBHOST' in os.environ
+if not 'WEBSITE_HOSTNAME' in os.environ:
+    app.config.from_object('unnamedproject.config.development')
+else:
+    app.config.from_object('unnamedproject.config.production')
 socketio = SocketIO(app)
 
 # Database
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-
-def _fk_pragma_on_connect(dbapi_con, con_record):  # noqa
-    dbapi_con.execute('pragma foreign_keys=ON')
-
-
-with app.app_context():
-    from sqlalchemy import event
-    event.listen(db.engine, 'connect', _fk_pragma_on_connect)
+if sqlite:
+    def _fk_pragma_on_connect(dbapi_con, con_record):  # noqa
+        dbapi_con.execute('pragma foreign_keys=ON')
+    with app.app_context():
+        from sqlalchemy import event
+        event.listen(db.engine, 'connect', _fk_pragma_on_connect)
 
 # Assets
 assets = Environment(app)
