@@ -3,6 +3,7 @@
 body {
   background-color: $lightcolor;
   margin: 0px;
+  height: 100vh;
 
   header {
     font-size: 48px;
@@ -16,6 +17,7 @@ body {
   }
 
   main {
+    height: calc(100% - #{$header-height});
     #lobby-chooseplayercount {
       text-align: center;
 
@@ -55,11 +57,13 @@ body {
         color: transparent;
       }
     }
-
+    #game-wrapper {
+      height: 100%;
+    }
     #gametable {
       display: flex;
       width: 100%;
-      height: calc(100% - #{$header-height});
+      height: 100%;
 
       #top_card_background_div {
         text-align: center;
