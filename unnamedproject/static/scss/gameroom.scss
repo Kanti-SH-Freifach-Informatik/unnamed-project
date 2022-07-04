@@ -1,224 +1,233 @@
 @import "variables.scss";
 
 body {
-  background-color: $lightcolor;
-  margin: 0px;
-  height: 100vh;
+    background-color: $lightcolor;
+    margin: 0px;
+    height: 100vh;
 
-  header {
-    font-size: 48px;
-    text-align: center;
-    letter-spacing: -1px;
-    border-bottom: 2px solid midnightblue;
-    color: midnightblue;
-    font-weight: bold;
-    height: $header-height;
-    box-sizing: border-box;
-  }
-
-  main {
-    height: calc(100% - #{$header-height});
-    #lobby-chooseplayercount {
-      text-align: center;
-
-      align-items: center;
-      justify-content: center;
-      transform: scale(3);
-      padding-top: 5%;
-
-      #lobby-hmp {
-        text-decoration: none;
-        color: navy;
-      }
-
-      #creategamebutton {
-        background-color: $lightcolor;
-        color: midnightblue;
-      }
-    }
-
-    #waiting-room-div {
-      text-align: center;
-      #joined-players-list {
-        padding-left: 0;
-        list-style-type: none;
-        li {
-          vertical-align: middle;
+    header {
+        h1 {
+            font-size: 48px;
+            letter-spacing: -1px;
+            color: midnightblue;
+            font-weight: bold;
+            margin: 0;
         }
-      }
-    }
-
-    #lobby-ee {
-      text-align: left;
-      padding-top: 9cm;
-
-      #lobby-eastr {
-        text-decoration: none;
-        color: transparent;
-      }
-    }
-    #game-wrapper {
-      height: 100%;
-    }
-    #gametable {
-      display: flex;
-      width: 100%;
-      height: 100%;
-
-      #top_card_background_div {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 300px;
-        font-size: 128px;
-      }
-
-      .card-selection-form-button {
-        border: none;
-        outline: none;
-        background-color: transparent;
-        box-shadow: none;
-      }
-
-      #play-area {
-        display: flex;
-        height: 100%;
-        width: calc(100% - #{$sidebar-width});
-        flex-direction: column;
-
-        #center-flex-box {
-          width: 100%;
-          flex-grow: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: $basecolor;
+        img {
+          height: 60px;
+          width: auto;
         }
+        display: flex;
+        gap: 16px;
+        padding: 5px 16px;
+        border-bottom: 2px solid midnightblue;
+        height: $header-height;
+        box-sizing: border-box;
+    }
 
-        #action-bar {
-          height: 200px;
-          display: flex;
-          justify-content: center;
-          width: calc(100% - 50px);
-          align-items: center;
-          background-color: $lightcolor;
-          margin: 25px;
-          box-sizing: border-box;
-
-          #card_selection_div {
-            font-size: larger;
-            height: 100%;
-            background-color: $lightcolor;
+    main {
+        height: calc(100% - #{$header-height});
+        #lobby-chooseplayercount {
             text-align: center;
-            overflow: auto;
-            display: flex;
-            flex-wrap: wrap;
-            flex: 1 1 0;
+
+            align-items: center;
             justify-content: center;
-          }
+            transform: scale(3);
+            padding-top: 5%;
 
-          #draw-button-frame {
-            margin-bottom: 30px;
-            background-color: red;
-            border-color: black;
-            border-style: solid;
-            border-width: 1px;
-            border-radius: 50%;
-            padding: 50px;
-            #draw-button {
-              border: none;
-              background-color: inherit;
-              #draw-button-text {
-                font-size: 20px;
-              }
-            }
-          }
-        }
-      }
-
-      #sidebar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: $lightcolor;
-        text-align: center;
-        width: $sidebar-width;
-        height: 100%;
-
-        #player-ranking {
-          padding: 0px;
-          background-color: $lightcolor;
-          list-style-type: none;
-
-          .player-ranking-name {
-            margin: 0px;
-          }
-
-          #player-ranking-name-cardcount {
-            margin-bottom: 8px;
-          }
-        }
-
-        #chat-messages {
-          flex: 1 1 0;
-          width: 100%;
-          padding: 0 25px;
-          box-sizing: border-box;
-          display: flex;
-          justify-content: flex-start;
-          flex-direction: column-reverse;
-          overflow: auto;
-
-          .single-chat-message {
-            .chat-meta-info {
-              display: flex;
-              justify-content: space-between;
-              font-size: 12px;
-              font-weight: bold;
-              color: #666666;
-              margin-top: 12px;
+            #lobby-hmp {
+                text-decoration: none;
+                color: navy;
             }
 
-            .chat-message-text {
-              border-radius: 8px;
-              background-color: #a9a9a9;
-              padding: 8px;
-              text-align: left;
+            #creategamebutton {
+                background-color: $lightcolor;
+                color: midnightblue;
             }
-          }
         }
 
-        #chatbox {
-          background-color: $lightcolor;
-          textarea {
+        #waiting-room-div {
+            text-align: center;
+            #joined-players-list {
+                padding-left: 0;
+                list-style-type: none;
+                li {
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        #lobby-ee {
+            text-align: left;
+            padding-top: 9cm;
+
+            #lobby-eastr {
+                text-decoration: none;
+                color: transparent;
+            }
+        }
+        #game-wrapper {
+            height: 100%;
+        }
+        #gametable {
+            display: flex;
             width: 100%;
-            margin-bottom: 12px;
-          }
-        }
-      }
-    }
+            height: 100%;
 
-    #game-list-div {
-      margin: 50px;
-      #game-list-item {
-        border: 1px solid;
-        border-color: black;
-        padding: 5px 5px 5px 5px;
-        margin: 0px;
-        margin-top: 5px;
-        display: flex;
-        .g-l-i-c {
-          margin: 0;
-          flex-grow: 1;
-          flex-basis: 0;
+            #top_card_background_div {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 200px;
+                height: 300px;
+                font-size: 128px;
+            }
+
+            .card-selection-form-button {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            #play-area {
+                display: flex;
+                height: 100%;
+                width: calc(100% - #{$sidebar-width});
+                flex-direction: column;
+
+                #center-flex-box {
+                    width: 100%;
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $basecolor;
+                }
+
+                #action-bar {
+                    height: 200px;
+                    display: flex;
+                    justify-content: center;
+                    width: calc(100% - 50px);
+                    align-items: center;
+                    background-color: $lightcolor;
+                    margin: 25px;
+                    box-sizing: border-box;
+
+                    #card_selection_div {
+                        font-size: larger;
+                        height: 100%;
+                        background-color: $lightcolor;
+                        text-align: center;
+                        overflow: auto;
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex: 1 1 0;
+                        justify-content: center;
+                    }
+
+                    #draw-button-frame {
+                        margin-bottom: 30px;
+                        background-color: red;
+                        border-color: black;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius: 50%;
+                        padding: 50px;
+                        #draw-button {
+                            border: none;
+                            background-color: inherit;
+                            #draw-button-text {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #sidebar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: $lightcolor;
+                text-align: center;
+                width: $sidebar-width;
+                height: 100%;
+
+                #player-ranking {
+                    padding: 0px;
+                    background-color: $lightcolor;
+                    list-style-type: none;
+
+                    .player-ranking-name {
+                        margin: 0px;
+                    }
+
+                    #player-ranking-name-cardcount {
+                        margin-bottom: 8px;
+                    }
+                }
+
+                #chat-messages {
+                    flex: 1 1 0;
+                    width: 100%;
+                    padding: 0 25px;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: column-reverse;
+                    overflow: auto;
+
+                    .single-chat-message {
+                        .chat-meta-info {
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: #666666;
+                            margin-top: 12px;
+                        }
+
+                        .chat-message-text {
+                            border-radius: 8px;
+                            background-color: #a9a9a9;
+                            padding: 8px;
+                            text-align: left;
+                        }
+                    }
+                }
+
+                #chatbox {
+                    background-color: $lightcolor;
+                    textarea {
+                        width: 100%;
+                        margin-bottom: 12px;
+                    }
+                }
+            }
         }
-        .g-l-i-c-b {
-          margin: 0;
-          flex-basis: 0;
+
+        #game-list-div {
+            margin: 50px;
+            #game-list-item {
+                border: 1px solid;
+                border-color: black;
+                padding: 5px 5px 5px 5px;
+                margin: 0px;
+                margin-top: 5px;
+                display: flex;
+                .g-l-i-c {
+                    margin: 0;
+                    flex-grow: 1;
+                    flex-basis: 0;
+                }
+                .g-l-i-c-b {
+                    margin: 0;
+                    flex-basis: 0;
+                }
+            }
         }
-      }
     }
-  }
 }

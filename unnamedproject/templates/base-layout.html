@@ -9,17 +9,21 @@
     <script src="{{ ASSET_URL }}"></script>
     {%endassets%}
     <title>{{ name }}</title>
-    <link rel="icon" type="image/x-icon" href="unnamedproject/static/images/icon/logo.jpg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon/apple-touch-icon.png')}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon/favicon-32x32.png')}}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon/favicon-16x16.png')}}" />
+    <link rel="manifest" href="{{ url_for('static', filename='images/favicon/site.webmanifest')}}" />
+    <link rel="mask-icon" href="{{ url_for('static', filename='images/favicon/safari-pinned-tab.svg')}}" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 </head>
 <body>
     <header>
-        {%block header%}{%endblock%}
-        project innominatus
+        <img alt="Logo" src="{{ url_for('static', filename='images/logo.jpg')}}" id="header-logo">
+        <h1>project innominatus</h1>
+        {%block header%}{%endblock%} 
     </header>
-    <main>
-        {%block content%}{%endblock%}
-    </main>
-    <footer>
-        {%block footer%}{%endblock%}
-    </footer>
+    <main>{%block content%}{%endblock%}</main>
+    <footer>{%block footer%}{%endblock%}</footer>
 </body>
